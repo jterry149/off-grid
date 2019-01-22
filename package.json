@@ -1,0 +1,40 @@
+{
+  "name": "off-grid",
+  "version": "1.0.0",
+  "description": "Off-Grid travel and informational application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jterry149/off-grid.git"
+  },
+  "keywords": [
+    "travel",
+    "off",
+    "grid",
+    "rv",
+    "van"
+  ],
+  "author": "Jessica Terry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jterry149/off-grid/issues"
+  },
+  "homepage": "https://github.com/jterry149/off-grid#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.5",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
