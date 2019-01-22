@@ -1,4 +1,13 @@
-# off-grid
-React based travel application for living life on the road
+## OFF-GRID TRAVEL APPlICATION
 
-Rebecca update test
+## PROJECT DESCRIPTION
+
+## TECHNOLOGIES USED
+
+## TEAM MEMBERS AND RESPONSIBILITIES
+
+- Jessica 
+- REBECCA
+- OSCAR
+
+## PROJECT DEMO
