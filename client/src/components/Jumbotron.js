@@ -3,13 +3,13 @@ import React from "react";
 function Jumbotron() {
   return (
     <div className="jumbotron">
-      <h1>Your Project</h1>
-      <p>
-        Enim adipisicing enim reprehenderit ex ullamco consectetur Lorem laboris magna exercitation.
-        Aliquip reprehenderit magna elit cillum adipisicing dolore aliquip velit. Ipsum ullamco
-        nostrud tempor eu deserunt ipsum incididunt fugiat esse ipsum. Exercitation nostrud
-        exercitation sit ex nostrud aliqua officia magna nostrud deserunt et esse eu deserunt. Non
-        dolor consequat qui ea culpa tempor magna nulla consectetur est occaecat.
+      <h1>Live life on the road...without the bumps</h1>
+      <h2>Simplify your journey with our expertise</h2>
+
+      <h3>Start Here (dropdown) research, discover, plan, map, shower, shop and park.</h3>
+      <h3></h3>
+      <p> 
+     
       </p>
     </div>
   );

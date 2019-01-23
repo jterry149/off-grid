@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">
-        Navbar
+        off-grid
       </a>
       <button
         className="navbar-toggler"
@@ -64,7 +64,7 @@ function Navbar() {
           <input
             className="form-control mr-sm-2"
             type="search"
-            placeholder="Search"
+            placeholder="sea"
             aria-label="Search"
           />
           <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
