@@ -1,0 +1,9 @@
+/* * {
+    background: pink;
+} */
+
+.custom-jumbotron {
+    height: 200px;
+    width: 100%;
+    background-image: ('../Images/camperbeach.jpg')
+}

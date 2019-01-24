@@ -2,7 +2,7 @@ import React from "react";
 
 function Jumbotron() {
   return (
-    <div className="jumbotron">
+    <div className="jumbotron custom-jumbotron">
       <h1>Live life on the road...without the bumps</h1>
       <h2>Simplify your journey with our expertise</h2>
 
