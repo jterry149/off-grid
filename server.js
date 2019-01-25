@@ -8,13 +8,17 @@ const posts = require("./routes/api/posts");
 // Variable initialized for express
 const app = express();
 
+// Middleware to request body as JSON 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
+
 // Datbase Config
 const db = require('./config/keys').MONGO_URI;
 
 // Connect to MongoDB
 mongoose.connect(db, { useNewUrlParser: true })
-.then(() => console.log("mongoDB connected"))
-.catch(err => console.log(err));;
+    .then(() => console.log("mongoDB connected"))
+    .catch(err => console.log(err));;
     
 
 // Initial testing route
