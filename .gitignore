@@ -90,4 +90,4 @@ package-lock.json
 /config/keys_dev.js
 
 #.vscode
-.vscode
+/.vscode
