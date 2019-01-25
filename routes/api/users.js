@@ -2,7 +2,9 @@
 const express = require('express');
 const router = express.Router();
 
-// Get method to test users
+// Route:       GET api/users/usersTest
+// Description: Tests users route
+// Access:      Public
 router.get('/usersTest', (req, res) => res.json({ msg: "Users works" }));
 
 // Export the router

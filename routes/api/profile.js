@@ -2,7 +2,9 @@
 const express = require('express');
 const router = express.Router();
 
-// Get method to test the profile
+// Route:       GET api/profile/profileTest
+// Description: Tests profile route
+// Access:      Public
 router.get('/profileTest', (req, res) => res.json({msg: "Profile works"}));
 
 // Export the router
