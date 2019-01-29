@@ -4,6 +4,7 @@ const router = express.Router();
 const gravatar = require('gravatar');
 const bycrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const keys = require('../../config/keys');
 const User = require('../../models/User');
 
 // Route:       GET api/users/test
@@ -59,32 +60,40 @@ router.post('/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     // Find the user by email address
-    User.findOne({email})
-        .then(user => {
+    User.findOne({email}).then(user => 
+    {
             // If statement to check for user if not found then return not found
-            if(!user){
-                return res.status(404).json({email: 'User was not found'});
+        if(!user)
+        {
+            return res.status(404).json({email: 'User was not found'});
+        }
+
+        // Check the password using bycrypt by comparing the hashed password with the actual password passed.
+        bycrypt.compare(password, user.password).then(isMatch => 
+        {
+            if(isMatch) 
+            {
+                // User is matched create jsonwebtoken payload for authentication
+                const payload = 
+                { 
+                    id: user.id,
+                    name: user.name,
+                    avatar: user.avatar
+                }
+                // Sign the token and pass in necessary parameters
+                jwt.sign(
+                    payload,
+                    keys.secretOrKey,
+                    { expiresIn: 3600 },
+                    () => {
+
+                    });
+            }   else {
+                return res.status(400).json({password: "Password was incorrect"});
             }
-
-            // Check the password using bycrypt by comparing the hashed password with the actual password passed.
-            bycrypt.compare(password, user.password)
-                .then(isMatch => {
-                    if(isMatch) {
-                        // User is matched
-                        const payload = { 
-                            id: user.id,
-                            name: user.name,
-                        }
-                        // Sign the token
-                        jwt.sign();
-                    } else {
-                        return res.status(400).json({password: "Password was incorrect"});
-                    }
-                })
-
         });
+    });
 });
-
-    
+  
 // Export the router
 module.exports = router;
