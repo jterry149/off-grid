@@ -6,8 +6,13 @@ const bycrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 
-// Required Files
+// Load keys file
 const keys = require('../../config/keys');
+
+// Load our input validation file
+const validateRegisterInput = require('../../validation/register');
+
+// Load our User model file
 const User = require('../../models/User');
 
 // Route:       GET api/users/test
@@ -19,11 +24,18 @@ router.get('/usersTest', (req, res) => res.json({ msg: "Users test works" }));
 // Description: Register user and POST to the database
 // Access:      Public
 router.post('/register', (req, res) => {
+    // Object to bring in our errors
+    const { errors, isValid } = validateRegisterInput(req.body);
+
+    // Check our Validation Here
+    if(!isValid){
+        return res.status(400).json(errors);
+    }
     // Find user email if exists if not create the user in the database
-    User.findOne({ email: req.body.email })
-    .then(user => {
+    User.findOne({ email: req.body.email }).then(user => {
         if(user) {
-            return res.status(400).json({email: 'Email already exists'});
+            errors.email = 'Email already exists';
+            return res.status(400).json(errors);
         } else {
             // Grab the email address assigned avatar or set a default icon
             const avatar = gravatar.url(req.body.email, {
@@ -102,8 +114,7 @@ router.post('/login', (req, res) => {
 // Route:       Get api/users/current
 // Description: Current user then return their data
 // Access:      Private
-router.get('/current', passport.authenticate('jwt', { session: false }), 
-(req,res) => {
+router.get('/current', passport.authenticate('jwt', { session: false }), (req,res) => {
     // Sends back a Json object of data to user for the application
     res.json({
         id: req.user.id,
