@@ -1,9 +1,12 @@
-// Dependencies and files needed
+// Required Dependencies
 const express = require('express');
 const router = express.Router();
 const gravatar = require('gravatar');
 const bycrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const passport = require('passport');
+
+// Required Files
 const keys = require('../../config/keys');
 const User = require('../../models/User');
 
@@ -12,7 +15,7 @@ const User = require('../../models/User');
 // Access:      Public
 router.get('/usersTest', (req, res) => res.json({ msg: "Users test works" }));
 
-// Route:       GET api/users/register
+// Route:       POST api/users/register
 // Description: Register user and POST to the database
 // Access:      Public
 router.post('/register', (req, res) => {
@@ -44,16 +47,14 @@ router.post('/register', (req, res) => {
                   newUser.password = hash;
                   newUser.save()
                     .then(user => res.json(user))
-                    .catch(err => console.log(err));
-                
-                   
+                    .catch(err => console.log(err)); 
                }) 
             })
         }
     })
 });
 
-// Route:       GET api/users/login
+// Route:       POST api/users/login
 // Description: Login user then return Json Web tokens
 // Access:      Public
 router.post('/login', (req, res) => {
@@ -85,8 +86,11 @@ router.post('/login', (req, res) => {
                     payload,
                     keys.secretOrKey,
                     { expiresIn: 3600 },
-                    () => {
-
+                    (err, token) => {
+                       res.json({
+                        success: true,
+                        token: 'Bearer ' + token
+                       }); 
                     });
             }   else {
                 return res.status(400).json({password: "Password was incorrect"});
@@ -94,6 +98,19 @@ router.post('/login', (req, res) => {
         });
     });
 });
-  
+
+// Route:       Get api/users/current
+// Description: Current user then return their data
+// Access:      Private
+router.get('/current', passport.authenticate('jwt', { session: false }), 
+(req,res) => {
+    // Sends back a Json object of data to user for the application
+    res.json({
+        id: req.user.id,
+        name: req.user.name,
+        email: req.user.email
+    });
+});
+
 // Export the router
 module.exports = router;
