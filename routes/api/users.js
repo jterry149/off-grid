@@ -9,8 +9,9 @@ const passport = require('passport');
 // Load keys file
 const keys = require('../../config/keys');
 
-// Load our input validation file
+// Load our input validation files
 const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
 
 // Load our User model file
 const User = require('../../models/User');
@@ -70,15 +71,26 @@ router.post('/register', (req, res) => {
 // Description: Login user then return Json Web tokens
 // Access:      Public
 router.post('/login', (req, res) => {
+    // Object to bring in our errors
+    const { errors, isValid } = validateLoginInput(req.body);
+
+    // Check our Validation Here
+    if(!isValid){
+        return res.status(400).json(errors);
+    }
+    
+    // Declare our variables and assign values
     const email = req.body.email;
     const password = req.body.password;
+    
     // Find the user by email address
     User.findOne({email}).then(user => 
     {
-            // If statement to check for user if not found then return not found
+        // If statement to check for user if not found then return not found
         if(!user)
         {
-            return res.status(404).json({email: 'User was not found'});
+            errors.email = 'User not found';
+            return res.status(404).json(errors);
         }
 
         // Check the password using bycrypt by comparing the hashed password with the actual password passed.
@@ -105,7 +117,8 @@ router.post('/login', (req, res) => {
                        }); 
                     });
             }   else {
-                return res.status(400).json({password: "Password was incorrect"});
+                errors.password = 'Password was incorrect';
+                return res.status(400).json(errors);
             }
         });
     });
