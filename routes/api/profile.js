@@ -18,7 +18,7 @@ router.get('/profileTest', (req, res) => res.json({msg: "Profile works"}));
 // Route:       GET api/profile
 // Description: Get current users profile
 // Access:      Private
-router.get('/', passport.authenticate('jwt', {session: false}), (req,res)=> {
+router.get('/', passport.authenticate('jwt', { session: false }), (req,res)=> {
     // Declared variable to hold empty error objects
     const errors = {};
     
@@ -28,6 +28,7 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req,res)=> {
             errors.noprofile = 'There is no profile for this user';
             return res.status(404).json(errors);
         }
+        res.json(profile);
     })
 });
 
