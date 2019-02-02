@@ -25,7 +25,7 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req,res)=> {
     // Find the user profile if there is one if not let user know 
     Profile.findOne({ user: req.user.id }).then(profile => {
         if(!profile) {
-            errors.noprofile = 'There is no profile for this user';
+            errors.noprofile = 'There is no profile for this user. Please try again.';
             return res.status(404).json(errors);
         }
         res.json(profile);
