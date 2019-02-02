@@ -5,5 +5,6 @@
 .custom-jumbotron {
     height: 200px;
     width: 100%;
-    background-image: ('../Images/camperbeach.jpg')
+    background: lightblue;
+    /* background-image: ('../../Images/camperbeach.jpg') */
 }
