@@ -1,6 +1,9 @@
-// Required dependencies and files 
+// Required dependencies
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
+
+// Required files
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
@@ -21,8 +24,11 @@ mongoose.connect(db, { useNewUrlParser: true })
     .catch(err => console.log(err));;
     
 
-// Initial testing route
-app.get('/', (req,res) => res.send('Hello World'));
+// Passport middleware 
+app.use(passport.initialize());
+
+// Bring Passport config file into the server
+require('./config/passport')(passport);
 
 // Request go through our middleware routes
 app.use(users);
