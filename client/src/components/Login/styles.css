@@ -1,16 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond");
+
 .modal-body {
-  padding: 20px;
-  background-color: lightskyblue;
+  padding: 40px;
+  /* background-color: rgb(171, 211, 248); */
+  background-color: #b5c7cb;
+  font-family: "EB Garamond", serif;
 }
 h3 {
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "EB Garamond", serif;
 }
 
 .container {
+  font-size: 20px;
   margin-right: 10px;
   padding-right: 5px;
+  align-content: center;
 }
-body {
-  text-align: right;
+
+.btn-secondary {
+  color: #fff;
+  background-color: #b5c7cb;
+  border-radius: 8px;
+}
+.login {
+  width: 160px;
+  float: right;
+  margin: -4px 0 -4px 12px;
 }
