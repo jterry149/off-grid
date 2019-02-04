@@ -1,10 +1,16 @@
-/* * {
-    background: pink;
-} */
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond");
 
 .custom-jumbotron {
-    height: 200px;
-    width: 100%;
-    background: lightblue;
-    /* background-image: ('../../Images/camperbeach.jpg') */
+  height: 250px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  font-family: "EB Garamond", serif;
+  background-color: #b5c7cb;
+  /* background-image: ('../../Images/camperbeach.jpg') */
+}
+body {
+  font-family: "EB Garamond", serif;
+  text-align: right;
 }
