@@ -3,7 +3,7 @@ import { Modal, ModalBody } from "reactstrap";
 
 import "./styles.css";
 
-class LoginBootstrap extends Component {
+class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,18 +23,14 @@ class LoginBootstrap extends Component {
   render() {
     return (
       <div className="container">
-        <button onClick={this.toggleModal}>Login or Register</button>
+        <button onClick={this.toggleModal}>Signup</button>
         <Modal isOpen={this.state.modalOpen} toggle={this.toggleModal}>
           <ModalBody className="modal-body">
-            <h2>LOGIN</h2>
+            <h2>Sign up</h2>
 
             <form action="action_page.php">
               <div className="imgcontainer">
-                <img
-                  src="./Images/camperbeach.jpg"
-                  alt="Avatar"
-                  class="avatar"
-                />
+                <img src="./Images/avatar.jpg" alt="Avatar" class="avatar" />
 
                 <div class="container">
                   <label for="uname">
@@ -102,4 +98,4 @@ class LoginBootstrap extends Component {
   }
 }
 
-export default LoginBootstrap;
+export default Signup;

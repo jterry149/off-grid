@@ -26,7 +26,7 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
-              Link
+              Explore
             </a>
           </li>
           <li className="nav-item dropdown">
@@ -39,7 +39,7 @@ function Navbar() {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Dropdown
+              What to expect
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <a className="dropdown-item" href="#">
@@ -56,7 +56,7 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <a className="nav-link disabled" href="#">
-              Disabled
+              More options to come
             </a>
           </li>
         </ul>
@@ -71,7 +71,7 @@ function Navbar() {
             className="btn btn-outline-success my-2 my-sm-0"
             type="submit"
           >
-            Search
+            Search site
           </button>
         </form>
       </div>

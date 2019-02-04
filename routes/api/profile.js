@@ -18,19 +18,25 @@ router.get('/profileTest', (req, res) => res.json({msg: "Profile works"}));
 // Route:       GET api/profile
 // Description: Get current users profile
 // Access:      Private
-router.get('/', passport.authenticate('jwt', { session: false }), (req,res)=> {
-    // Declared variable to hold empty error objects
-    const errors = {};
+router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
     
-    // Find the user profile if there is one if not let user know 
-    Profile.findOne({ user: req.user.id }).then(profile => {
-        if(!profile) {
-            errors.noprofile = 'There is no profile for this user. Please try again.';
+    // Empty object for the errors
+    const errors = {};
+
+    // If there is a profile go find it and populate if not let user know
+    Profile.findOne({ user: req.user.id })
+    .populate('user', ['name', 'avatar']).then(profile => {
+    
+        if (!profile) {
+            errors.noprofile = 'There is no profile for this user';
             return res.status(404).json(errors);
         }
-        res.json(profile);
-    })
+            res.json(profile);
+        })
+        .catch(err => res.status(404).json(err));
 });
+
+
 
 // Export the router
 module.exports = router;
