@@ -1,30 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
   CarouselCaption
-} from 'reactstrap';
-const camperImage = require('../Images/camperbeach.jpg')
-const camperImage2 = require('../Images/camperkayak.jpg')
-const rvImage = require('../Images/rvsunset2.jpg')
+} from "reactstrap";
+const camperImage = require("../Images/camperbeach.jpg");
+const camperImage2 = require("../Images/camperkayak.jpg");
+const rvImage = require("../Images/rvsunset2.jpg");
 
 const items = [
   {
     src: camperImage,
-    altText: '',
-    caption: 'traveLife on the road'
+    altText: "",
+    caption: "TraveLife on the road"
   },
   {
     src: camperImage2,
-    altText: '',
-    caption: 'traveLife'
+    altText: "",
+    caption: "TraveLife"
   },
   {
     src: rvImage,
-    altText: 'Slide 3',
-    caption: 'Slide 3'
+    altText: "Slide 3",
+    caption: "Slide 3"
   }
 ];
 
@@ -49,13 +49,19 @@ class Example extends Component {
 
   next() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    const nextIndex =
+      this.state.activeIndex === items.length - 1
+        ? 0
+        : this.state.activeIndex + 1;
     this.setState({ activeIndex: nextIndex });
   }
 
   previous() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    const nextIndex =
+      this.state.activeIndex === 0
+        ? items.length - 1
+        : this.state.activeIndex - 1;
     this.setState({ activeIndex: nextIndex });
   }
 
@@ -67,7 +73,7 @@ class Example extends Component {
   render() {
     const { activeIndex } = this.state;
 
-    const slides = items.map((item) => {
+    const slides = items.map(item => {
       return (
         <CarouselItem
           onExiting={this.onExiting}
@@ -75,7 +81,10 @@ class Example extends Component {
           key={item.src}
         >
           <img src={item.src} alt={item.altText} />
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption
+            captionText={item.caption}
+            captionHeader={item.caption}
+          />
         </CarouselItem>
       );
     });
@@ -86,14 +95,25 @@ class Example extends Component {
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators
+          items={items}
+          activeIndex={activeIndex}
+          onClickHandler={this.goToIndex}
+        />
         {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        <CarouselControl
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={this.previous}
+        />
+        <CarouselControl
+          direction="next"
+          directionText="Next"
+          onClickHandler={this.next}
+        />
       </Carousel>
     );
   }
 }
-
 
 export default Example;
