@@ -2,19 +2,21 @@ import React from "react";
 
 // import Login from "./components/Login/Login";
 import YouTube from "./components/YouTube/YouTube";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
-import Carousel from "./components/Carousel";
-import Card from "./components/Card";
+import Carousel from "./components/Carousel/Carousel";
+import Card from "./components/Card/Card";
 import Footer from "./components/Footer/Footer";
-import LoginMDB from "./components/Login/LoginMDB";
+import MDBLogin from "./components/Login/MDBLogin";
+import SignupMDB from "./components/Signup/SignupMDB";
 // import Signup from "./components/Signup/Signup";
 import "./styles.css";
 
 function App() {
   return (
     <div>
-      <LoginMDB />
+      <MDBLogin />
+      <SignupMDB />
       <YouTube />
       {/* <Signup /> */}
       <Navbar />

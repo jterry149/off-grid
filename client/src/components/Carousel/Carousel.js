@@ -6,9 +6,10 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from "reactstrap";
-const camperImage = require("../Images/camperbeach.jpg");
-const camperImage2 = require("../Images/camperkayak.jpg");
-const rvImage = require("../Images/rvsunset2.jpg");
+const camperImage = require("../../Images/camperbeach.jpg");
+const camperImage2 = require("../../Images/camperkayak.jpg");
+const rvImage = require("../../Images/rvsunset2.jpg");
+
 
 const items = [
   {

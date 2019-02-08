@@ -20,7 +20,7 @@ import {
   MDBModalFooter
 } from "mdbreact";
 
-class LoginMDB extends Component {
+class LoginMDB extends MDBModal {
   state = {
     email: "",
     password: "",
@@ -42,78 +42,84 @@ class LoginMDB extends Component {
     return (
       //   <button onClick={this.toggleModal}>Login or Register</button>,
       <MDBContainer>
-        <MDBBtn onClick={this.toggle}>Login or Register</MDBBtn>
+        <MDBBtn onClick={this.toggle}>Login</MDBBtn>
         <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
           <MDBModalHeader toggle={this.toggle}>Sign In</MDBModalHeader>
           <MDBModalBody>
-            <div className="md-form mb-5">
-              <input
-                type="email"
-                id="Form-email1"
-                className="form-control validate"
-              />
-              <label data-error="wrong" data-success="right" for="Form-email1">
-                Your email
-              </label>
-            </div>
 
-            <div className="md-form pb-3">
-              <input
-                type="password"
-                id="Form-pass1"
-                className="form-control validate"
-              />
-              <label data-error="wrong" data-success="right" for="Form-pass1">
-                Your password
+            {/* <!--Body--> */}
+
+            <div className="modal-body mx-4">
+              <div className="md-form mb-5">
+                <input
+
+                  type="email"
+                  id="Form-email1"
+                  className="form-control validate"
+                />
+                <label data-error="wrong" data-success="right" for="Form-email1">
+                  Your email {" "}
+                </label>
+              </div>
+
+              <div className="md-form pb-3">
+                <input
+                  type="password"
+                  id="Form-pass1"
+                  className="form-control validate"
+                />
+                <label data-error="wrong" data-success="right" for="Form-pass1">
+                  Your password
               </label>
-              <p className="font-small blue-text d-flex justify-content-end">
-                Forgot{" "}
-                <a href="#" className="blue-text ml-1">
-                  Password?
+                <p className="font-small blue-text d-flex justify-content-end">
+                  Forgot{" "}
+                  <a href="#" className="blue-text ml-1">
+                    Password?
                 </a>
-              </p>
-              <div className="text-center mb-3">
-                <button
-                  type="button"
-                  className="btn blue-gradient btn-block btn-rounded z-depth-1a"
-                >
-                  Sign in
+                </p>
+                <div className="text-center mb-3">
+                  <button
+                    type="button"
+                    className="btn blue-gradient btn-block btn-rounded z-depth-1a"
+                  >
+                    Sign in
                 </button>
-              </div>
-              <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
-                {" "}
-                or Sign in with:
+                </div>
+                <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
+                  {" "}
+                  or Sign in with:
               </p>
 
-              <div className="row my-3 d-flex justify-content-center">
-                {/* <!--Facebook--> */}
-                <Button
-                  type="button"
-                  className="btn btn-white btn-rounded mr-md-3 z-depth-1a"
-                >
-                  <i className="fab fa-facebook-f text-center" />
-                </Button>
-                {/* <!--Twitter--> */}
-                <button
-                  type="button"
-                  className="btn btn-white btn-rounded mr-md-3 z-depth-1a"
-                >
-                  <i className="fab fa-twitter" />
-                </button>
-                {/* <!--Google +--> */}
-                <button
-                  type="button"
-                  className="btn btn-white btn-rounded z-depth-1a"
-                >
-                  <i className="fab fa-google-plus-g" />
-                </button>
+                <div className="row my-3 d-flex justify-content-center">
+                  {/* <!--Facebook--> */}
+                  <Button
+                    type="button"
+                    className="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+                  >
+                    <i className="fab fa-facebook-f text-center" />
+                  </Button>
+                  {/* <!--Twitter--> */}
+                  <button
+                    type="button"
+                    className="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+                  >
+                    <i className="fab fa-twitter" />
+                  </button>
+                  {/* <!--Google +--> */}
+                  <button
+                    type="button"
+                    className="btn btn-white btn-rounded z-depth-1a"
+                  >
+                    <i className="fab fa-google-plus-g" />
+                  </button>
+                </div>
+                <p className="font-small grey-text d-flex justify-content-end">
+                  Not a member?{" "}
+                  <a href="#" className="blue-text ml-1">
+                    Sign Up{" "}
+                  </a>{" "}
+                </p>
               </div>
-              <p className="font-small grey-text d-flex justify-content-end">
-                Not a member?{" "}
-                <a href="#" className="blue-text ml-1">
-                  Sign Up{" "}
-                </a>{" "}
-              </p>
             </div>
           </MDBModalBody>
           {/* <MDBModalFooter>
