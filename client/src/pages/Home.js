@@ -1,10 +1,10 @@
 // Required Dependencies and Files
 import React, { Component } from "react";
-import Jumbotron from "../Jumbotron/Jumbotron";
-import Carousel from "../Carousel/Carousel";
-import Card from "../Card/Card";
+import Jumbotron from "../components/Jumbotron/Jumbotron";
+import Carousel from "../components/Carousel/Carousel";
+import Card from "../components/Card/Card";
 
-import '../pages/Home';
+
 class Home extends Component {
 
 render() {

@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 // Required Files
-import Home from "./components/pages/Home";
+import Home from "./pages/Home";
 //import CurrentLocation from './components/Map/Map';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
