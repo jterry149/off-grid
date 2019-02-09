@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Required Files
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../Navbar/NavbarMDB';
 import Footer from '../Footer/Footer';
 
 // Style the google maps

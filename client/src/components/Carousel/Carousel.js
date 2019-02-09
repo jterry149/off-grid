@@ -1,14 +1,10 @@
 import React, { Component } from "react";
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
-} from "reactstrap";
-const camperImage = require("../../images/camperbeach.jpg");
-const camperImage2 = require("../../images/camperbeach2.jpg");
-const rvImage = require("../../images/camperroad.jpg");
+import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+"mdbreact";
+const coffeeImage = require("../../images/coffee.png");
+const vanImage = require("../../images/van.png");
+const truckImage = require("../../images/truck.png");
+const rvImage = require("../../images/rv.png");
 
 const items = [
   {
