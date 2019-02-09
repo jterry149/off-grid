@@ -1,4 +1,4 @@
-# OFF-GRID TRAVEL APPLICATION
+# TraveLife TRAVEL APPLICATION
 
 ## PROJECT PROBLEM
 - Wanting to have an application that is one-stop shop for the person that lives life on the road. 
@@ -26,4 +26,4 @@
     - Oscar Juma
 
 ## PROJECT DEMO
-[Demo Here](#)
+[Demo Here](https://off-grid1.herokuapp.com/)

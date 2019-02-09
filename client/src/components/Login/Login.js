@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Modal, ModalBody } from "reactstrap";
 import {
-  Container,
   Col,
   Form,
   FormGroup,
@@ -72,11 +71,11 @@ class Login extends Component {
             </Form>
             <p />
             <span class="reg">
-              Don't have an account? <a href="#">Sign up</a>
+              Don't have an account? <a href="/register">Sign up</a>
             </span>
             <p />
             <span class="psw">
-              Forgot <a href="#">password?</a>
+              Forgot <a href="/password">password?</a>
             </span>
             <p />
             <Button onClick={this.toggleModal}>Close</Button>

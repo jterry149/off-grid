@@ -1,27 +1,21 @@
+// Required Dependecies 
 import React from "react";
+import { MDBJumbotron, MDBContainer } from "mdbreact";
 
-function Jumbotron() {
+const Jumbotron = () => {
   return (
-    <div className="jumbotron custom-jumbotron">
-      {/* QUESTION FOR TANNER - HOW TO USE "() or "&" in REACT JS" */}
-      <h2>
-        {/* Travel, live, work, or discover... */}
-        <p>Life on (and off) the road...</p>
-      </h2>
-      <h2>
-        without the B<sup>U</sup>M<sup>P</sup>S.
-      </h2>
-      <p />
-      <h3>
-        Begin your journey
-        <p>
-          research - discover - plan - map - travel - work - drive - stop - park
-          - dine - refresh - relax - sleep
-          <p>TEMPORARY VERBAGE/WORDING - JUST FILLING SPACES</p>
-        </p>
-      </h3>
-    </div>
+    <MDBJumbotron fluid className="text-center jumbotron">
+      <MDBContainer>
+        <h1>TraveLife Road Warriors</h1>
+          <p>
+            Your home is where the open road will lead you. 
+            <br />
+            Discover everything you need to becoming a TraveLife Road Warrior.
+          </p>
+      </MDBContainer>
+    </MDBJumbotron>
   );
 }
 
+// Export the Jumbotron
 export default Jumbotron;
