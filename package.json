@@ -37,11 +37,7 @@
     "mongoose": "^5.4.5",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-<<<<<<< HEAD
-    "react-router-dom": "^4.3.1",
-=======
     "path": "^0.12.7",
->>>>>>> off-grid-jessica
     "validator": "^10.11.0"
   },
   "devDependencies": {
