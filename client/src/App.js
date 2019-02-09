@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-
-// import Login from "./components/Login/Login";
-import YouTube from "./components/YouTube/YouTube";
-import Navbar from "./components/Navbar/Navbar";
-import Jumbotron from "./components/Jumbotron/Jumbotron";
-import Carousel from "./components/Carousel/Carousel";
-import Card from "./components/Card/Card";
-import Footer from "./components/Footer/Footer";
-import MDBLogin from "./components/Login/MDBLogin";
-import SignupMDB from "./components/Signup/SignupMDB";
-// import Signup from "./components/Signup/Signup";
-import "./styles.css";
-
-function App() {
-  return (
-    <div>
-      <MDBLogin />
-      <SignupMDB />
-      <YouTube />
-      {/* <Signup /> */}
-      <Navbar />
-      <Jumbotron />
-      <Carousel />
-      <Card />
-      <Footer />
-    </div>
-  );
-=======
 // Required Dependencies
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -131,7 +101,6 @@ class  App extends Component {
       </Provider>
     );
   }
->>>>>>> off-grid-jessica
 }
 
 export default App;

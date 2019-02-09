@@ -5,17 +5,13 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
-<<<<<<< HEAD
     "mdbreact": "^4.10.0",
-=======
     "classnames": "^2.2.6",
     "dotenv": "^6.2.0",
     "google-maps-react": "^2.0.2",
     "jwt-decode": "^2.2.0",
-    "mdbreact": "^4.10.0",
     "moment": "^2.24.0",
     "prop-types": "^15.6.2",
->>>>>>> off-grid-jessica
     "react": "^16.7.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.8.1",
@@ -38,7 +34,7 @@
   },
   "browserslist": [
     ">0.2%",
-    "not dead"
+    "not dead",
     "not ie <= 11",
     "not op_mini all"
   ]
