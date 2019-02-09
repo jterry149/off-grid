@@ -9,6 +9,8 @@ import Card from "./components/Card/Card";
 import Footer from "./components/Footer/Footer";
 import MDBLogin from "./components/Login/MDBLogin";
 import SignupMDB from "./components/Signup/SignupMDB";
+import YouTubeCarousel from "./components/YouTube/YouTubeCarousel";
+
 // import Signup from "./components/Signup/Signup";
 import "./styles.css";
 
@@ -17,6 +19,7 @@ function App() {
     <div>
       <MDBLogin />
       <SignupMDB />
+      <YouTubeCarousel />
       <YouTube />
       {/* <Signup /> */}
       <Navbar />
