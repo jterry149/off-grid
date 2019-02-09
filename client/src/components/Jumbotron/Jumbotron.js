@@ -1,27 +1,17 @@
+// Required Dependecies 
 import React from "react";
 
 function Jumbotron() {
   return (
-    <div className="jumbotron custom-jumbotron">
-      {/* QUESTION FOR TANNER - HOW TO USE "() or "&" in REACT JS" */}
-      <h2>
-        {/* Travel, live, work, or discover... */}
-        <p>Life on (and off) the road...</p>
-      </h2>
-      <h2>
-        without the B<sup>U</sup>M<sup>P</sup>S.
-      </h2>
-      <p />
-      <h3>
-        Begin your journey
+    <div className="jumbotron fluid text-center">
+      <h1>TraveLife Road Warriors</h1>
         <p>
-          research - discover - plan - map - travel - work - drive - stop - park
-          - dine - refresh - relax - sleep
-          <p>TEMPORARY VERBAGE/WORDING - JUST FILLING SPACES</p>
+          Your home is where the open road will lead you. 
+          <br />
+          Discover everything you need to becoming a TraveLife Road Warrior.
         </p>
-      </h3>
     </div>
   );
 }
-
+// Export the Jumbotron
 export default Jumbotron;

@@ -11,7 +11,8 @@ module.exports = function validateRegisterInput(data){
     data.name = !isEmpty(data.name) ? data.name : '';
     data.email = !isEmpty(data.email) ? data.email : '';
     data.password = !isEmpty(data.password) ? data.password : '';
-    data.confirmPassword = !isEmpty(data.confirmPassword) ? data.confirmPassword : '';
+    data.confirmPassword = !isEmpty(data.confirmPassword) ?
+    data.confirmPassword : '';
 
     // Validate the length of the name to be a certain amount of characters
     if(!Validator.isLength(data.name, { min: 2, max: 30 })){

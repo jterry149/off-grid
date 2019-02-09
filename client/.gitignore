@@ -3,5 +3,7 @@
 package-lock.json
 /.vscode
 
+# Secure the Api keys
+.env
 
 

@@ -6,9 +6,9 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from "reactstrap";
-const camperImage = require("../Images/camperbeach.jpg");
-const camperImage2 = require("../Images/camperkayak.jpg");
-const rvImage = require("../Images/rvsunset2.jpg");
+const camperImage = require("../../images/camperbeach.jpg");
+const camperImage2 = require("../../images/camperbeach2.jpg");
+const rvImage = require("../../images/camperroad.jpg");
 
 const items = [
   {
@@ -19,7 +19,7 @@ const items = [
   {
     src: camperImage2,
     altText: "",
-    caption: "TraveLife"
+    caption: "Where the road is your home"
   },
   {
     src: rvImage,
