@@ -5,11 +5,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
+    "mdbreact": "^4.10.0",
     "classnames": "^2.2.6",
     "dotenv": "^6.2.0",
     "google-maps-react": "^2.0.2",
     "jwt-decode": "^2.2.0",
-    "mdbreact": "^4.10.0",
     "moment": "^2.24.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",

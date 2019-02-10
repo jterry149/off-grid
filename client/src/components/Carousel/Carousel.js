@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
 "mdbreact";
+
 const coffeeImage = require("../../images/coffee.png");
 const vanImage = require("../../images/van.png");
 const truckImage = require("../../images/truck.png");

@@ -1,7 +1,16 @@
 import React, { Component } from "react";
 import { Modal, ModalBody } from "reactstrap";
-
+import {
+  MDBContainer,
+  MDBBtnGroup,
+  MDBBtn,
+  MDBModal,
+  MDBModalBody,
+  MDBModalHeader,
+  MDBModalFooter
+} from "mdbreact";
 import "./styles.css";
+
 
 class Signup extends Component {
   constructor(props) {
@@ -28,6 +37,8 @@ class Signup extends Component {
           <ModalBody className="modal-body">
             <h2>Sign up</h2>
 
+
+            {/* 
             <form action="action_page.php">
               <div className="imgcontainer">
                 <img src="./Images/avatar.jpg" alt="Avatar" class="avatar" />
@@ -93,9 +104,9 @@ class Signup extends Component {
             </form>
           </ModalBody>
         </Modal>
-      </div>
-    );
-  }
-}
-
-export default Signup;
+      </div> */}
+            );
+          }
+        }
+        
+        export default Signup;
