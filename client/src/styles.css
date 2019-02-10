@@ -1,12 +1,42 @@
 @import url("https://fonts.googleapis.com/css?family=EB+Garamond");
 
-.custom-jumbotron {
-  height: 250px;
-  color: #fff;
-  text-align: center;
-  width: 100%;
-  padding: 20px;
+.jumbotron {
+  background: url('./images/road.png'); 
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 25px;
+  text-shadow:2px 2px #000000;
+}
+body {
   font-family: "EB Garamond", serif;
-  background-color: #b5c7cb;
-  /* background-image: ('../../Images/camperbeach.jpg') */
+  text-align: right;
+}
+
+img {
+  width:100%;
+}
+.Site {
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+}
+.Site-content {
+ flex: 1 0 auto;
+ padding: var( — space) var( — space) 0;
+ width: 100%;
+ height: 60px;
+}
+.Site-content:after {
+  content: ‘\00a0’;
+  display: block;
+  margin-top: var( — space);
+  height: 0;
+  visibility: hidden;
+}
+
+.fa-lg {
+  padding: 10px;
+
 }

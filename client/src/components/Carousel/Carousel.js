@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
-} from "reactstrap";
-const camperImage = require("../../Images/camperbeach.jpg");
-const camperImage2 = require("../../Images/camperkayak.jpg");
-const rvImage = require("../../Images/rvsunset2.jpg");
+import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+"mdbreact";
 
+const coffeeImage = require("../../images/coffee.png");
+const vanImage = require("../../images/van.png");
+const truckImage = require("../../images/truck.png");
+const rvImage = require("../../images/rv.png");
 
 const items = [
   {
@@ -20,7 +16,7 @@ const items = [
   {
     src: camperImage2,
     altText: "",
-    caption: "TraveLife"
+    caption: "Where the road is your home"
   },
   {
     src: rvImage,
