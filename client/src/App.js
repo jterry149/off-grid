@@ -18,8 +18,10 @@ import Home from "./pages/Home";
 //import CurrentLocation from './components/Map/Map';
 import Navbar from './components/Navbar/NavbarMDB';
 import Footer from './components/Footer/Footer';
-import Register from './components/auth/Register';
-import Login from './components/auth/Login'
+//import Register from './components/auth/Register';
+// import Login from './components/auth/Login'
+import Signup from './components/Signup/SignupMDB'
+import Login from './components/Login/LoginMDB'
 //import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/Create-Profile/CreateProfile';
 //import EditProfile from './components/edit-profile/EditProfile';
@@ -57,9 +59,9 @@ if (localStorage.jwtToken) {
 
 
 
-class  App extends Component {
+class App extends Component {
   render() {
-    return(
+    return (
       <Provider store={store}>
         <Router>
           <div className="App">
@@ -67,7 +69,7 @@ class  App extends Component {
             <Route exact path="/" component={Home} />
             <div className="container">
               {/* <Route exact path="/map" component={CurrentLocation} /> */}
-              <Route exact path="/register" component={Register} />
+              <Route exact path="/register" component={Signup} />
               <Route exact path="/login" component={Login} />
               {/* <Route exact path="/profile/:handle" component={Profile} />
               <Switch>
@@ -75,9 +77,9 @@ class  App extends Component {
               </Switch> */}
               <Switch>
                 <PrivateRoute
-                    exact
-                    path="/create-profile"
-                    component={CreateProfile}
+                  exact
+                  path="/create-profile"
+                  component={CreateProfile}
                 />
               </Switch>
               {/* <Switch>
@@ -104,11 +106,3 @@ class  App extends Component {
 }
 
 export default App;
-
-// TANNER - NEED TO ADD MODALS FOR: SIGNUP, PLAN A TRIP (WITH DESTINATION AND STOP CHOICES, LINKED TO GOOGLEMAPS API//
-
-//MODALS:
-//PAGES/LINKS/DROPDOWNS - OWN YOUR OWN TINY HOME, RV, CAMPER; LEARN HOW TO CONVERT; RENT A VEHICLE; ROAD RULES //
-// CAMPGROUND INFORMATION; WORKING ON THE ROAD; LIVE MAPS WITH TRAFFIC, DIRECTIONS; USER PAGE - UPDATE TRIP, WIFI, GAS STATIONS, //
-//PARKING, TRAFFIC, SHOWERS, SHOPPING, DINING, PUBLIC / PRIVATE AREAS; SIGHTSEEING ALONG THE WAY;//
-// ABOUT US/CONTACT US PAGE, FOOTER, FACEBOOK, TWITTER, INSTA LINKS; ARTICLES ON TRAVEL; WEBSITE SCRAPING FOR ARTICLES;
