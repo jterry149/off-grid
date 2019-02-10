@@ -23,28 +23,23 @@ import {
 class LoginMDB extends MDBModal {
   state = {
     email: "",
-    password: "",
-    modal: false
-  };
-
-  toggle = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
+    password: ""
   };
 
   submitForm(e) {
     e.preventDefault();
     console.log(`Email: ${this.state.email}`);
   }
-
+  openOtherModal = () => {
+    this.props.toggleOtherModal();
+    this.props.toggle();
+  }
   render() {
     return (
       //   <button onClick={this.toggleModal}>Login or Register</button>,
       <MDBContainer>
-        <MDBBtn onClick={this.toggle}>Login</MDBBtn>
-        <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-          <MDBModalHeader toggle={this.toggle}>Sign In</MDBModalHeader>
+        <MDBModal isOpen={this.props.modal} toggle={this.props.toggle}>
+          <MDBModalHeader toggle={this.props.toggle}>Sign In</MDBModalHeader>
           <MDBModalBody>
 
             {/* <!--Body--> */}
@@ -115,9 +110,9 @@ class LoginMDB extends MDBModal {
                 </div>
                 <p className="font-small grey-text d-flex justify-content-end">
                   Not a member?{" "}
-                  <a href="#" className="blue-text ml-1">
+                  <p onClick={this.openOtherModal} className="green-text ml-1 font-weight-bold">
                     Sign Up{" "}
-                  </a>{" "}
+                  </p>{" "}
                 </p>
               </div>
             </div>
