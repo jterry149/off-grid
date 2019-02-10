@@ -1,7 +1,7 @@
 // Required Dependencies and Files
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron/Jumbotron";
-//import Carousel from "../components/Carousel/Carousel";
+// -rimport Carousel from "../components/Carousel/Carousel";
 import Card from "../components/Card/Card";
 
 
