@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=EB+Garamond");
 
+/* .navbar {
+  background: url('./images/traveLife_logo.png');
+} */
+
+.rounded-mx-auto-d-block {
+  width: 45%;
+  height: 25%;
+}
+.navbar {
+  background: none!important;
+}
 .jumbotron {
   background: url('./images/road.png'); 
   background-size: cover;
