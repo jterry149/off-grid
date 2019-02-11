@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 const mapStyles = {
-  width: '100%',
-  height: '100%'
+  width: '80%',
+  height: '80%'
 };
 
 export class MapContainer extends Component {
@@ -22,7 +22,6 @@ export class MapContainer extends Component {
   }
 }
 
-
-export default GoogleApiWrapper (
-(props) =>({apiKey: props.apikey})
-)(MapContainer)
+export default GoogleApiWrapper(
+  (props) =>({apiKey: props.apikey})
+)(MapContainer);
