@@ -36,14 +36,15 @@ class LoginMDB extends MDBModal {
   }
   render() {
     return (
-      //   <button onClick={this.toggleModal}>Login or Register</button>,
       <MDBContainer>
         <MDBModal isOpen={this.props.modal} toggle={this.props.toggle}>
-          <MDBModalHeader toggle={this.props.toggle}>Sign In</MDBModalHeader>
-          <MDBModalBody>
-
-            {/* <!--Body--> */}
-
+          {/* <MDBModalHeader toggle={this.props.toggle}>Sign In</MDBModalHeader> */}
+          <MDBModalBody className="mx-4">
+            <div className="text-center">
+              <h3 className="dark-grey-text mb-5">
+                <strong>Sign in</strong>
+              </h3>
+            </div>
             <div className="modal-body mx-4">
               <div className="md-form mb-5">
                 <input

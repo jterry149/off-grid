@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBBtn
-} from "mdbreact";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBBtn, MDBCol, MDBRow } from "mdbreact";
 
 // Required Files
 import { logoutUser } from '../../actions/authActions';
 import Login from '../Login/LoginMDB';
-import Signup from '../Signup/SignupMDB'
+import Signup from '../Signup/SignupMDB';
+import Logo_small from '../../images/Logo_small.png';
+import Worrier from '../../images/worrier.png';
+import RoadWarrior from '../../images/roadwarriors_small.png'
+// import RoadWarriorColor from '../../images/roadwarriors_small_yellow.png'
 
 class Navbar extends Component {
   state = {
@@ -79,12 +81,16 @@ class Navbar extends Component {
     // Guest user links
     const guestLinks = (
       <MDBNavbarNav >
-        <MDBNavItem >
-          <MDBBtn onClick={() => this.toggleSignupModal()}>Sign up</MDBBtn>
-        </MDBNavItem>
-        <MDBNavItem>
-          <MDBBtn onClick={() => this.toggleLoginModal()}>Login</MDBBtn>
-        </MDBNavItem>
+        <div id="transparent">
+          <MDBNavItem >
+            <div id="red">
+              <MDBBtn onClick={() => this.toggleSignupModal()}>Sign up</MDBBtn>
+            </div>
+          </MDBNavItem>
+          <MDBNavItem>
+            <MDBBtn onClick={() => this.toggleLoginModal()}>Log in</MDBBtn>
+          </MDBNavItem>
+        </div>
       </MDBNavbarNav>
     );
     return (
@@ -99,33 +105,47 @@ class Navbar extends Component {
           toggle={this.toggleSignupModal}
           toggleOtherModal={this.toggleLoginModal}
         />
+        {/* color="indigo darken-4" dark expand="md"> */}
+        <MDBNavbar>
+          <MDBRow>
+            <MDBCol sm-3>
+              <MDBNavbarBrand>
+                <a class="nav-link Ripple-parent active" aria-current="page" href="/">
+                  <img src={Logo_small} style={{ width: 200, marginTop: -7 }} /></a>
+                <a class="nav-link Ripple-parent active" aria-current="page" href="/">
+                  <img src={RoadWarrior} style={{ width: 300 }} /></a>
+              </MDBNavbarBrand>
+            </MDBCol>
+            <MDBCol sm-3>
+              <MDBNavbarBrand>
 
-        <MDBNavbar color="indigo darken-4" dark expand="md">
-          <MDBNavbarBrand>
-            <strong className="white-text">TraveLife Road Warriors</strong>
-          </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={this.toggleCollapse} />
-          <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-            <MDBNavbarNav left>
-              <MDBNavItem active>
-                <MDBNavLink to="/">Home</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/about">About</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/map">Journey</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/resources">Resources</MDBNavLink>
-              </MDBNavItem>
-            </MDBNavbarNav>
-            <MDBNavbarNav right>
-              {isAuthenticated ? authLinks : guestLinks}
-            </MDBNavbarNav>
-          </MDBCollapse>
+              </MDBNavbarBrand>
+            </MDBCol>
+            <MDBCol sm-6>
+              <MDBNavbarToggler onClick={this.toggleCollapse} />
+              <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+                <MDBNavbarNav>
+                  <MDBNavItem active>
+                    <MDBNavLink to="/">Home</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="/about">About</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="/map">Journey</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="/YouTube">Resources</MDBNavLink>
+                  </MDBNavItem>
+                </MDBNavbarNav>
+                <MDBNavbarNav>
+                  {isAuthenticated ? authLinks : guestLinks}
+                </MDBNavbarNav>
+              </MDBCollapse>
+            </MDBCol>
+          </MDBRow>
         </MDBNavbar>
-      </div>
+      </div >
     );
   }
 }
