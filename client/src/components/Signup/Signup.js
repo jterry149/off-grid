@@ -1,41 +1,41 @@
-import React, { Component } from "react";
-import { Modal, ModalBody } from "reactstrap";
-import {
-  MDBContainer,
-  MDBBtnGroup,
-  MDBBtn,
-  MDBModal,
-  MDBModalBody,
-  MDBModalHeader,
-  MDBModalFooter
-} from "mdbreact";
-import "./styles.css";
+// import React, { Component } from "react";
+// import { Modal, ModalBody } from "reactstrap";
+// import {
+//   MDBContainer,
+//   MDBBtnGroup,
+//   MDBBtn,
+//   MDBModal,
+//   MDBModalBody,
+//   MDBModalHeader,
+//   MDBModalFooter
+// } from "mdbreact";
+// import "./styles.css";
 
 
-class Signup extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-      modalOpen: false
-    };
-  }
+// class Signup extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       email: "",
+//       password: "",
+//       modalOpen: false
+//     };
+//   }
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
+//   handleChange = event => {
+//     const { name, value } = event.target;
+//     this.setState({ [name]: value });
+//   };
 
-  toggleModal = () => this.setState({ modalOpen: !this.state.modalOpen });
+//   toggleModal = () => this.setState({ modalOpen: !this.state.modalOpen });
 
-  render() {
-    return (
-      <div className="container">
-        <button onClick={this.toggleModal}>Signup</button>
-        <Modal isOpen={this.state.modalOpen} toggle={this.toggleModal}>
-          <ModalBody className="modal-body">
-            <h2>Sign up</h2>
+//   render() {
+//     return (
+//       <div className="container">
+//         <button onClick={this.toggleModal}>Signup</button>
+//         <div isOpen={this.state.modalOpen} toggle={this.toggleModal}>
+//           <div className="modal-body">
+//             <h2>Sign up</h2>
 
 
             {/* 
@@ -105,8 +105,8 @@ class Signup extends Component {
           </ModalBody>
         </Modal>
       </div> */}
-            );
+            {/* );
           }
         }
         
-        export default Signup;
+        export default Signup; */}

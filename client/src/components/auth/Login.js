@@ -45,18 +45,20 @@ class Login extends Component {
         event.preventDefault();
 
         // Variable object for the user
-        const user = {
+        const userData = {
             email: this.state.email,
             password: this.state.password
         };
 
+        this.props.loginUser(userData);
+
         // Show user data for testing
-        console.log(user);
+        console.log(userData);
     }
 
     // Event handler for onChange
     onChange(event) {
-        this.setState({ [event.target.name]: event.target.vale});
+        this.setState({ [event.target.name]: event.target.value});
     }
 
     // Render the Modal

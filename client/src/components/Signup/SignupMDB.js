@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput, MDBModal, MDBModalHeader, MDBModalBody } from 'mdbreact';
+import { MDBContainer, MDBBtn, MDBModalFooter, MDBInput, MDBModal, MDBModalHeader, MDBModalBody } from 'mdbreact';
 
-class SignupMDB extends MDBModal {
+class SignupMDB extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,80 +22,52 @@ class SignupMDB extends MDBModal {
 
     render() {
 
-        // const SignupMDB = () => {
-        return (
-            <MDBContainer>
-                <MDBModal isOpen={this.props.modal} toggle=
-                    {this.props.toggle}>
-                    <MDBModalBody>
-                        <MDBRow>
-                            <MDBCol md="6">
-                                <MDBCard
-                                    className="card-image"
-                                    style={{
-                                        backgroundImage:
-                                            "url(https://mdbootstrap.com/img/Photos/Others/pricing-table7.jpg)",
-                                        width: "28rem"
-                                    }}
-                                >                        <MDBBtn onClick={this.props.toggle}>X</MDBBtn>
-
-                                    <div className="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
-                                        <div className="text-center">
-                                            <h3 className="white-text mb-5 mt-4 font-weight-bold">
-                                                <strong>SIGN</strong>
-                                                <a href="#!" className="green-text font-weight-bold">
-                                                    <strong> UP</strong>
-                                                </a>
-                                            </h3>
-                                        </div>
-                                        <MDBInput label="Your email" group type="text" validate />
-                                        <MDBInput label="Your password" group type="password" validate />
-                                        <div className="md-form pb-3">
-                                            <div className="form-check my-4">
-                                                <input
-                                                    className="form-check-input"
-                                                    type="checkbox"
-                                                    value=""
-                                                    id="defaultCheck17"
-                                                />
-                                                <label
-                                                    className="form-check-label white-text"
-                                                    htmlFor="defaultCheck17"
-                                                >
-                                                    Accept the
-                    <a href="#!" className="green-text font-weight-bold">
-                                                        Terms and Conditions
-                    </a>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <MDBRow className="d-flex align-items-center mb-4">
-                                            <div className="text-center mb-3 col-md-12">
-                                                <MDBBtn
-                                                    color="success"
-                                                    rounded
-                                                    type="button"
-                                                    className="btn-block z-depth-1"
-                                                >
-                                                    Sign in
-                  </MDBBtn>
-                                            </div>
-                                        </MDBRow>
-                                        <MDBCol md="12">
-                                            <p className="font-small white-text d-flex justify-content-end">
-                                                Have an account?
-                                                <p onClick={this.openOtherModal} className="green-text ml-1 font-weight-bold">
-                                                    Log in
-                  </p>
-                                            </p>
-                                        </MDBCol>
-                                    </div>
-                                </MDBCard>
-                            </MDBCol>
-                        </MDBRow>
+    return (
+    <MDBContainer>
+        <MDBModal isOpen={this.props.modal} toggle={this.props.toggle}>
+          <MDBModalHeader className="justify-center-center" toggle={this.props.toggle}>Sign Up</MDBModalHeader>
+            <MDBModalBody>
+                <form className="modal-body mx-4">
+                    <MDBInput icon="user" label="Your Name" group type="text" validate />
+                    <MDBInput icon="envelope"label="Your Email Address" group type="email" validate />
+                    <MDBInput icon="lock" label="Your Password" group type="password" validate />
+                    <MDBInput icon="lock"label="Confirm Password" group type="password" validate />
+                        <div className="md-form pb-3">
+                            <div className="form-check my-4">
+                                <MDBInput className="form-check-input" 
+                                        group type="checkbox" 
+                                        value=""              
+                                        id="defaultCheck17"/>
+                                                
+                                <p> Accept the <a href="#!" className="blue-text font-weight-bold">
+                                                        Terms and Conditions</a></p> 
+                    
+                            </div>
+                        </div>
+                        <div className="text-center mb-3 col-md-12">
+                            <MDBBtn
+                                type="button"
+                                className="btn blue-gradient btn-block btn-rounded z-depth-1a"
+                                onSubmit={this.onSubmit}
+                                onClick={this.onChange}
+                            >
+                                Sign Up 
+                            </MDBBtn>
+                        </div>
+                            <div className="font-small grey-text d-flex justify-content-end">
+                                Have an account?{" "}
+                                <p onClick={this.openOtherModal} className="blue-text ml-1 font-weight-bold">
+                                Sign In{" "}
+                                </p>{" "}
+                        </div>
+                </form>
                     </MDBModalBody>
+                    <MDBModalFooter>
+                        <MDBContainer fluid>
+                            &copy; {new Date().getFullYear()} Copyright: <a href="/home"> TraveLife Road Warriors</a>
+                        </MDBContainer>
+                    </MDBModalFooter> 
                 </MDBModal>
-
             </MDBContainer>
         );
     };

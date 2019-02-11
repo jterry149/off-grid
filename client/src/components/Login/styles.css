@@ -29,3 +29,12 @@
 .form-elegant .modal-footer {
   font-weight: 400;
 }
+.modal-header {
+    background: #1a237e;
+    color: white;
+}
+.modal {
+  background: url("../../images/road.png");
+  background-size: cover;
+  background-position: center;
+}
