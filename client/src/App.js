@@ -22,7 +22,7 @@ import Footer from './components/Footer/Footer';
 // import Login from './components/auth/Login'
 import Signup from './components/Signup/SignupMDB'
 import Login from './components/Login/LoginMDB'
-//import Dashboard from './components/dashboard/Dashboard';
+import Dashboard from './components/Dashboard/Dashboard';
 import CreateProfile from './components/Create-Profile/CreateProfile';
 //import EditProfile from './components/edit-profile/EditProfile';
 //import AddVehicle from './components/add-credentials/AddVehicle';
@@ -31,7 +31,7 @@ import CreateProfile from './components/Create-Profile/CreateProfile';
 //import Profile from './components/profile/Profile';
 //import Posts from './components/posts/Posts';
 //import Post from './components/post/Post';
-//import NotFound from './components/not-found/NotFound';
+import NotFound from './components/Not-Found/NotFound';
 
 // Imported styles sheet
 import "./styles.css";
@@ -67,14 +67,15 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
             <div className="container">
               {/* <Route exact path="/map" component={CurrentLocation} /> */}
               <Route exact path="/register" component={Signup} />
               <Route exact path="/login" component={Login} />
-              {/* <Route exact path="/profile/:handle" component={Profile} />
+              {/* <Route exact path="/profile/:handle" component={Profile} /> */}
               <Switch>
                   <PrivateRoute exact path="/dashboard" component= {Dashboard} />
-              </Switch> */}
+              </Switch> 
               <Switch>
                 <PrivateRoute
                   exact
@@ -95,7 +96,7 @@ class App extends Component {
               {/* <Switch>
                 <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch> */}
-              {/* <Route exact path="/not-found" component={NotFound} /> */}
+              <Route exact path="/not-found" component={NotFound} /> 
             </div>
             <Footer />
           </div>

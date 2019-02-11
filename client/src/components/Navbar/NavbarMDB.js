@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBBtn
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, 
 } from "mdbreact";
 
 // Required Files
 import { logoutUser } from '../../actions/authActions';
+import { clearCurrentProfile } from '../../actions/profileActions';
 import Login from '../Login/LoginMDB';
 import Signup from '../Signup/SignupMDB'
 
@@ -33,7 +34,7 @@ class Navbar extends Component {
   // Event function to handle logout
   onLogoutClick(event) {
     event.preventDefault();
-    //this.props.clearCurrentProfile();
+    this.props.clearCurrentProfile();
     this.props.logoutUser();
   }
 
@@ -47,7 +48,7 @@ class Navbar extends Component {
 
     // Authenticated Links
     const authLinks = (
-      <MDBNavbarNav>
+      <MDBNavbarNav right>
         <MDBNavItem >
           <MDBNavLink to="/feed">
             Post Feed
@@ -78,37 +79,25 @@ class Navbar extends Component {
     );
     // Guest user links
     const guestLinks = (
-      <MDBNavbarNav >
+      <MDBNavbarNav right>
         <MDBNavItem >
-          <MDBBtn onClick={() => this.toggleSignupModal()}>Sign up</MDBBtn>
+          <MDBNavLink to="/register" onClick={() => this.toggleSignupModal()}>Sign-In</MDBNavLink>
         </MDBNavItem>
         <MDBNavItem>
-          <MDBBtn onClick={() => this.toggleLoginModal()}>Login</MDBBtn>
+          <MDBNavLink to="/login" onClick={() => this.toggleLoginModal()}>Login</MDBNavLink>
         </MDBNavItem>
       </MDBNavbarNav>
     );
     return (
-      <div>
-        <Login modal={this.state.loginModal}
-          toggle={this.toggleLoginModal}
-          toggleOtherModal={this.toggleSignupModal}
-
-        />
-        <Signup
-          modal={this.state.signupModal}
-          toggle={this.toggleSignupModal}
-          toggleOtherModal={this.toggleLoginModal}
-        />
-
         <MDBNavbar color="indigo darken-4" dark expand="md">
-          <MDBNavbarBrand>
+          <MDBNavbarBrand >
             <strong className="white-text">TraveLife Road Warriors</strong>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav left>
               <MDBNavItem active>
-                <MDBNavLink to="/">Home</MDBNavLink>
+                <MDBNavLink to="/home">Home</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="/about">About</MDBNavLink>
@@ -119,13 +108,24 @@ class Navbar extends Component {
               <MDBNavItem>
                 <MDBNavLink to="/resources">Resources</MDBNavLink>
               </MDBNavItem>
-            </MDBNavbarNav>
-            <MDBNavbarNav right>
+              <MDBNavbarNav right>
+              <MDBNavItem>
+                <Login modal={this.state.loginModal}
+                  toggle={this.toggleLoginModal}
+                  toggleOtherModal={this.toggleSignupModal}/>
+              </MDBNavItem>
+              <MDBNavItem>
+                  <Signup
+                  modal={this.state.signupModal}
+                  toggle={this.toggleSignupModal}
+                  toggleOtherModal={this.toggleLoginModal}
+                  />
+              </MDBNavItem>
               {isAuthenticated ? authLinks : guestLinks}
-            </MDBNavbarNav>
+              </MDBNavbarNav>
+            </MDBNavbarNav>       
           </MDBCollapse>
         </MDBNavbar>
-      </div>
     );
   }
 }
@@ -141,5 +141,5 @@ Navbar.propTypes = {
 const mapStateProps = state => ({
   auth: state.auth
 });
-export default connect(mapStateProps, { logoutUser })(Navbar);
+export default connect(mapStateProps, { logoutUser, clearCurrentProfile })(Navbar);
 

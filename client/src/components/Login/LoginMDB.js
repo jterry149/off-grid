@@ -102,7 +102,6 @@ class LoginMDB extends Component {
                 <p className="font-small blue-text d-flex justify-content-end">
                   {" "}<a href="!#" className="blue-text ml-1">Forgot Password?
                 </a></p>
-            </form>
                 <div className="text-center mb-3">
                   <MDBBtn
                     type="button"
@@ -147,6 +146,7 @@ class LoginMDB extends Component {
                     Sign Up{" "}
                   </p>{" "}
                 </div>
+              </form>
           </MDBModalBody>
           <MDBModalFooter>
             <MDBContainer fluid>
