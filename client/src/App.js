@@ -15,7 +15,7 @@ import PrivateRoute from './components/common/PrivateRoute';
 
 // Required Files
 import Home from "./pages/Home";
-//import CurrentLocation from './components/Map/Map';
+import CurrentLocation from './components/Map/Maps';
 import Navbar from './components/Navbar/NavbarMDB';
 import Footer from './components/Footer/Footer';
 import Register from './components/auth/Register';
@@ -66,7 +66,7 @@ class  App extends Component {
             <Navbar />
             <Route exact path="/" component={Home} />
             <div className="container">
-              {/* <Route exact path="/map" component={CurrentLocation} /> */}
+              <Route exact path="/Map" component={CurrentLocation} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               {/* <Route exact path="/profile/:handle" component={Profile} />
