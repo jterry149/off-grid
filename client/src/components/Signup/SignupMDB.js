@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput, MDBModal, MDBModalHeader, MDBModalBody } from 'mdbreact';
 
-class SignupMDB extends MDBModal {
+class SignupMDB extends Component {
     constructor(props) {
         super(props);
         this.state = {

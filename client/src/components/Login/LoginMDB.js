@@ -1,84 +1,117 @@
+// Required Dependencies
 import React, { Component } from "react";
-import { Modal, ModalBody } from "reactstrap";
-import {
-  Container,
-  Col,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Button
-} from "reactstrap";
+import {MDBContainer,MDBModal,MDBModalBody,MDBModalHeader,
+  MDBModalFooter, MDBInput, MDBBtn} from "mdbreact";
+import {Button} from "reactstrap";
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+
+import { loginUser  } from '../../actions/authActions';
 import "./styles.css";
-import {
-  MDBContainer,
-  MDBBtnGroup,
-  MDBBtn,
-  MDBModal,
-  MDBModalBody,
-  MDBModalHeader,
-  MDBModalFooter
-} from "mdbreact";
 
-class LoginMDB extends MDBModal {
-  state = {
-    email: "",
-    password: ""
-  };
 
-  submitForm(e) {
-    e.preventDefault();
-    console.log(`Email: ${this.state.email}`);
+
+class LoginMDB extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      errors: {}
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  // ComponentDidMount function
+    componentDidMount() {
+    if(this.props.auth.isAuthenticated) {
+        this.props.history.push('/dashboard');
+    }
+  }
+
+    // ComponentWillRecieveProps function
+    comonentWillRecieveProps(nextProps) {
+    // Push the props to the dashboard
+    if (nextProps.auth.isAuthenicated) {
+        this.props.history.push('/dashboard');
+    }
+
+    // Handle the errors of the props
+    if (nextProps.errors) {
+        this.setState({ errors: nextProps.errors });
+    }
+  }
+
+  // Event handler for onSubmit
+  onSubmit(event) {
+    event.preventDefault();
+
+    // Variable object for the user
+    const userData = {
+        email: this.state.email,
+        password: this.state.password
+    };
+
+    this.props.loginUser(userData);
+
+    // Show user data for testing
+    console.log(userData);
+  }
+  // Event handler for onChange
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value});
+  }
+
+  
+
+  // Open model
   openOtherModal = () => {
     this.props.toggleOtherModal();
     this.props.toggle();
   }
+
   render() {
+    // Object state to handle errors
+    const { errors } = this.state;
     return (
-      //   <button onClick={this.toggleModal}>Login or Register</button>,
       <MDBContainer>
         <MDBModal isOpen={this.props.modal} toggle={this.props.toggle}>
-          <MDBModalHeader toggle={this.props.toggle}>Sign In</MDBModalHeader>
+          <MDBModalHeader className="text-center" toggle={this.props.toggle}>Sign In</MDBModalHeader>
           <MDBModalBody>
-
             {/* <!--Body--> */}
-
-            <div className="modal-body mx-4">
-              <div className="md-form mb-5">
-                <input
-
-                  type="email"
-                  id="Form-email1"
-                  className="form-control validate"
+            <form className="modal-body mx-4">
+                <MDBInput 
+                  label="Your email"
+                  icon="envelope"
+                  group type="email"
+                  validate 
+                  success="Valid Email" 
                 />
-                <label data-error="wrong" data-success="right" for="Form-email1">
-                  Your email {" "}
-                </label>
-              </div>
-
-              <div className="md-form pb-3">
-                <input
-                  type="password"
-                  id="Form-pass1"
-                  className="form-control validate"
+                <MDBInput 
+                  label="Your Password"
+                  icon="lock"
+                  group type="password" 
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}
+                  validate
                 />
-                <label data-error="wrong" data-success="right" for="Form-pass1">
-                  Your password
-              </label>
                 <p className="font-small blue-text d-flex justify-content-end">
-                  Forgot{" "}
-                  <a href="#" className="blue-text ml-1">
-                    Password?
-                </a>
-                </p>
+                  {" "}<a href="!#" className="blue-text ml-1">Forgot Password?
+                </a></p>
+            </form>
                 <div className="text-center mb-3">
-                  <button
+                  <MDBBtn
                     type="button"
                     className="btn blue-gradient btn-block btn-rounded z-depth-1a"
+                    onSubmit={this.onSubmit}
+                    onClick={this.onChange}
                   >
                     Sign in
-                </button>
+                </MDBBtn>
                 </div>
                 <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
                   {" "}
@@ -108,108 +141,36 @@ class LoginMDB extends MDBModal {
                     <i className="fab fa-google-plus-g" />
                   </button>
                 </div>
-                <p className="font-small grey-text d-flex justify-content-end">
+                <div className="font-small grey-text d-flex justify-content-end">
                   Not a member?{" "}
-                  <p onClick={this.openOtherModal} className="green-text ml-1 font-weight-bold">
+                  <p onClick={this.openOtherModal} className="blue-text ml-1 font-weight-bold">
                     Sign Up{" "}
                   </p>{" "}
-                </p>
-              </div>
-            </div>
+                </div>
           </MDBModalBody>
-          {/* <MDBModalFooter>
-            <MDBBtn color="secondary" onClick={this.toggle}>
-              Close
-            </MDBBtn>
-            <MDBBtn color="primary">Save changes</MDBBtn>
-          </MDBModalFooter> */}
+          <MDBModalFooter>
+            <MDBContainer fluid>
+            &copy; {new Date().getFullYear()} Copyright: <a href="/home"> TraveLife Road Warriors</a>
+            </MDBContainer>
+          </MDBModalFooter> 
         </MDBModal>
       </MDBContainer>
-      //   <Modal isOpen={this.state.modalOpen} toggle={this.toggleModal}>
-      //     <div
-      //       className="modal fade"
-      //       id="elegantModalForm"
-      //       tabindex="-1"
-      //       role="dialog"
-      //       aria-labelledby="myModalLabel"
-      //       aria-hidden="true"
-      //     >
-      //       <div className="modal-dialog" role="document">
-      //         {/* <!--Content--> */}
-      //         <div className="modal-content form-elegant">
-      //           {/* <!--Header--> */}
-      //           <div className="modal-header text-center">
-      //             <h3
-      //               className="modal-title w-100 dark-grey-text font-weight-bold my-3"
-      //               id="myModalLabel"
-      //             >
-      //               <strong>Sign in</strong>
-      //             </h3>
-      //             <button
-      //               type="button"
-      //               className="close"
-      //               data-dismiss="modal"
-      //               aria-label="Close"
-      //             >
-      //               <span aria-hidden="true">&times;</span>
-      //             </button>
-      //           </div>
-      //           {/* <!--Body--> */}
-      //           <div className="modal-body mx-4">
-      //             {/* <!--Body--> */}
-      //             <div className="md-form mb-5">
-      //               <input
-      //                 type="email"
-      //                 id="Form-email1"
-      //                 className="form-control validate"
-      //               />
-      //               <label
-      //                 data-error="wrong"
-      //                 data-success="right"
-      //                 for="Form-email1"
-      //               >
-      //                 Your email
-      //               </label>
-      //             </div>
-
-      //             <div className="md-form pb-3">
-      //               <input
-      //                 type="password"
-      //                 id="Form-pass1"
-      //                 className="form-control validate"
-      //               />
-      //               <label
-      //                 data-error="wrong"
-      //                 data-success="right"
-      //                 for="Form-pass1"
-      //               >
-      //                 Your password
-      //               </label>
-      //               <p className="font-small blue-text d-flex justify-content-end">
-      //                 Forgot{" "}
-      //                 <a href="#" className="blue-text ml-1">
-      //                   Password?
-      //                 </a>
-      //               </p>
-      //             </div>
-
-      //           </div>
-      //           {/* <!--Footer--> */}
-      //           <div className="modal-footer mx-5 pt-3 mb-1">
-      //             <p className="font-small grey-text d-flex justify-content-end">
-      //               Not a member?
-      //               <a href="#" className="blue-text ml-1">
-      //                 Sign Up
-      //               </a>
-      //             </p>
-      //           </div>
-      //         </div>
-      //         {/* <!--/.Content--> */}
-      //       </div>
-      //     </div>
-      //   </Modal>
     );
   }
 }
+// Set up object PropsTypes for the Login 
+LoginMDB.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
 
-export default LoginMDB;
+// Build our mapStateToProps
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+// Export the Login
+export default connect(mapStateToProps, { loginUser})(LoginMDB);
+
