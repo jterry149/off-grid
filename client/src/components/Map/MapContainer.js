@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 // Required Files
-import CurrentLocation from './Map';
+import CurrentLocation from './MapTest';
 
 export class MapContainer extends Component {
   state = {
@@ -47,5 +47,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper(
-    (props) =>({apiKey: props.apikey})
+    (props) =>({apiKey: 'AIzaSyDiCXEXsaLJeCQYwiS1DVZYdNxqDsn9qNs'})
 )(MapContainer);

@@ -15,7 +15,7 @@ import PrivateRoute from './components/common/PrivateRoute';
 
 // Required Files
 import Home from "./pages/Home";
-//import CurrentLocation from './components/Map/Map';
+//import MapJourney from './components/Map/MapTest';
 import Navbar from './components/Navbar/NavbarMDB';
 import Footer from './components/Footer/Footer';
 //import Register from './components/auth/Register';
@@ -69,9 +69,15 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <div className="container">
-              {/* <Route exact path="/map" component={CurrentLocation} /> */}
-              <Route exact path="/register" component={Signup} />
-              <Route exact path="/login" component={Login} />
+              <Switch>
+                {/* <Route exact path="/mapjourney" component={MapJourney} />  */}
+              </Switch>
+              <Switch>
+                <Route exact path="/register" component={Signup} />
+              </Switch>
+              <Switch>
+                <Route exact path="/login" component={Login} />
+              </Switch>
               {/* <Route exact path="/profile/:handle" component={Profile} /> */}
               <Switch>
                   <PrivateRoute exact path="/dashboard" component= {Dashboard} />

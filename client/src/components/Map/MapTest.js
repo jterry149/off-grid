@@ -1,10 +1,8 @@
 // Required Dependencies
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
-// Required Files
-import Navbar from '../Navbar/NavbarMDB';
-import Footer from '../Footer/Footer';
 
 // Style the google maps
 const mapStyles = {
@@ -15,7 +13,7 @@ const mapStyles = {
   }
 };
 
-export class CurrentLocation extends React.Component {
+export class CurrentLocation extends Component {
   // constructor for our props
   constructor (props) {
     super(props);
@@ -74,7 +72,7 @@ export class CurrentLocation extends React.Component {
       // variable to be used for the dom
       const mapRef = this.refs.map;
 
-      // reference to the actual Dom elemnt 
+      // reference to the actual Dom element 
       const node = ReactDOM.findDOMNode(mapRef);
 
       // Variable object for the zoom function of the map
@@ -135,21 +133,25 @@ export class CurrentLocation extends React.Component {
   render() {
     return (
     <div className="Site">
-    <Navbar />
       <div className="Content">
         <div style={mapStyles } ref="map">
           Loading Map...
         </div>  
           {this.renderChildren()}
-      </div>
-    <Footer />  
+      </div>  
     </div>
     );
   }
 }
-// Export the Current Location
-export default CurrentLocation;
 
+
+
+
+CurrentLocation.propTypes = {
+  google: PropTypes.object,
+  zoom: PropTypes.number,
+  initialCenter: PropTypes.object
+}
 // The default Props settings
 CurrentLocation.defaultProps = {
   zoom: 14,
@@ -160,6 +162,5 @@ CurrentLocation.defaultProps = {
   centerAroundCurrentLocation: false,
   visible:true
 };
-  
-
-
+// Export the Current Location
+export default CurrentLocation; 
