@@ -22,7 +22,7 @@ const YouTubePage = () => {
               <MDBView hover rounded className="z-depth-1-half mb-4">
                 <img
                   className="img-fluid"
-                  src="https://mdbootstrap.com/img/Photos/Others/images/82.jpg"
+                  src="https://mdbootstrap.com/img/Photos/Others/Images/82.jpg"
                   alt=""
                 />
                 <a href="#!">
@@ -95,7 +95,7 @@ const YouTubePage = () => {
                   <MDBView hover rounded className="z-depth-1-half mb-4">
                     <img
                       className="img-fluid"
-                      src="https://mdbootstrap.com/img/Photos/Others/images/54.jpg"
+                      src="https://mdbootstrap.com/img/Photos/Others/Images/54.jpg"
                       alt=""
                     />
                     <a href="#!">
@@ -127,7 +127,7 @@ const YouTubePage = () => {
                   <MDBView hover rounded className="z-depth-1-half mb-4">
                     <img
                       className="img-fluid"
-                      src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg"
+                      src="https://mdbootstrap.com/img/Photos/Others/Images/49.jpg"
                       alt=""
                     />
                     <a href="#!">
@@ -161,7 +161,7 @@ const YouTubePage = () => {
               <MDBView hover rounded className="z-depth-1-half mb-4">
                 <img
                   className="img-fluid"
-                  src="https://mdbootstrap.com/img/Photos/Others/images/86.jpg"
+                  src="https://mdbootstrap.com/img/Photos/Others/Images/86.jpg"
                   alt=""
                 />
                 <a href="#!">
@@ -199,7 +199,7 @@ const YouTubePage = () => {
                   <MDBView hover rounded className="z-depth-1-half mb-4">
                     <img
                       className="img-fluid"
-                      src="https://mdbootstrap.com/img/Photos/Others/images/86.jpg"
+                      src="https://mdbootstrap.com/img/Photos/Others/Images/86.jpg"
                       alt=""
                     />
                     <a href="#!">
@@ -233,7 +233,7 @@ const YouTubePage = () => {
                   <MDBView hover rounded className="z-depth-1-half mb-4">
                     <img
                       className="img-fluid"
-                      src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg"
+                      src="https://mdbootstrap.com/img/Photos/Others/Images/48.jpg"
                       alt=""
                     />
                     <a href="#!">

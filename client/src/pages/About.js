@@ -1,9 +1,9 @@
 // Required Dependecies 
 import React from "react";
 import { MDBJumbotron, MDBContainer } from "mdbreact";
-import Logo from "../images/traveLife_logo.png";
-import Logo_small from "../images/Logo_small.png";
-import Worrier from "../images/worrier.png";
+import Logo from "../Images/traveLife_logo.png";
+import Logo_small from "../Images/Logo_small.png";
+import Worrier from "../Images/worrier.png";
 
 const Jumbotron = () => {
     return (

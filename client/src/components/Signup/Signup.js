@@ -38,7 +38,7 @@
 //             <h2>Sign up</h2>
 
 
-            {/* 
+{/* 
             <form action="action_page.php">
               <div className="imgcontainer">
                 <img src="./Images/avatar.jpg" alt="Avatar" class="avatar" />
@@ -105,7 +105,7 @@
           </ModalBody>
         </Modal>
       </div> */}
-            {/* );
+{/* );
           }
         }
         

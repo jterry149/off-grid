@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=EB+Garamond");
 
 .jumbotron {
-  background: url('./images/road.png'); 
+  background: url('./Images/road.png'); 
   background-size: cover;
   background-position: center;
   color: #ffffff;

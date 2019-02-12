@@ -5,7 +5,7 @@ function Card() {
   return (
     <MDBCardGroup>
       <MDBCard>
-        <MDBCardImage src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="MDBCard image cap" top hover
+        <MDBCardImage src="https://mdbootstrap.com/img/Photos/Others/Images/49.jpg" alt="MDBCard image cap" top hover
           overlay="white-slight" />
         <MDBCardBody>
           <MDBCardTitle tag="h5">Panel title</MDBCardTitle>
@@ -20,7 +20,7 @@ function Card() {
       </MDBCard>
 
       <MDBCard>
-        <MDBCardImage src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg" alt="MDBCard image cap" top hover
+        <MDBCardImage src="https://mdbootstrap.com/img/Photos/Others/Images/48.jpg" alt="MDBCard image cap" top hover
           overlay="white-slight" />
         <MDBCardBody>
           <MDBCardTitle tag="h5">Panel title</MDBCardTitle>
@@ -35,7 +35,7 @@ function Card() {
       </MDBCard>
 
       <MDBCard>
-        <MDBCardImage src="https://mdbootstrap.com/img/Photos/Others/images/77.jpg" alt="MDBCard image cap" top hover
+        <MDBCardImage src="https://mdbootstrap.com/img/Photos/Others/Images/77.jpg" alt="MDBCard image cap" top hover
           overlay="white-slight" />
         <MDBCardBody>
           <MDBCardTitle tag="h5">Panel title</MDBCardTitle>
