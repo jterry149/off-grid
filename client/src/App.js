@@ -18,7 +18,8 @@ import Home from './pages/Home';
 //import CurrentLocation from './components/Map/Map';
 import Navbar from './components/Navbar/NavbarMDB';
 import Footer from './components/Footer/Footer';
-import YouTube from './pages/YouTube';
+import YouTubeCard from './pages/YouTubeCard';
+// import YouTubeCarousel from './pages/YouTubeCarousel';
 import about from './pages/about';
 //import Register from './components/auth/Register';
 // import Login from './components/auth/Login'
@@ -69,7 +70,7 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Home} />
-            <Route exact path="/YouTube" component={YouTube} />
+            <Route exact path="/YouTubeCard" component={YouTubeCard} />
             <Route exact path="/about" component={about} />
 
             <div className="container">

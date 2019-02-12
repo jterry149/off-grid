@@ -1,56 +1,219 @@
 import React from "react";
-import { MDBContainer, Button } from "mdbreact";
+import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBMask, MDBIcon, MDBView, MDBBadge } from "mdbreact";
+import {
+	MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
+	MDBCardBody, MDBCardTitle, MDBCardText;
+} from "mdbreact";
+const FeaturesPage = () => {
 
-const YouTube = () => {
+	const newsStyle = {
+		borderBottom: "1px solid #e0e0e0",
+		marginBottom: "1.5rem"
+	};
+
 	return (
-		<div
-			className="modal fade"
-			id="modalYT"
-			tabindex="-1"
-			role="dialog"
-			aria-labelledby="myModalLabel"
-			aria-hidden="true"
+		<MDBCard
+			className="my-5 px-5 mx-auto"
+			style={{ fontWeight: 300, maxWidth: "90%" }}
 		>
-			<div className="modal-dialog modal-lg" role="document">
-				<div className="modal-content">
-					<div className="modal-body mb-0 p-0">
-						<div className="embed-responsive embed-responsive-16by9 z-depth-1-half">
-							<iframe
-								className="embed-responsive-item"
-								src="https://www.youtube.com/embed/A3PDXmYoF5U"
-								allowfullscreen
+			<MDBCardBody style={{ paddingTop: 0 }}>
+				<h2 className="h1-responsive font-weight-bold my-5 text-center">
+					Road Warrior Resources
+          </h2>
+				<p className="dark-grey-text mx-auto mb-5 w-75 text-center">
+
+				</p>
+				<MDBRow>
+					<MDBCol md="12" lg="4" className="mb-lg-0 mb-5">
+						<MDBView hover rounded className="z-depth-1-half mb-4">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/4lhyo7mfmbI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<MDBMask overlay="white-slight" className="waves-light" />
+						</MDBView>
+						<MDBRow className="mb-3">
+							<MDBCol size="12">
+								<a href="#!">
+									<MDBBadge color="pink">
+										<MDBIcon icon="car" className="pr-2" aria-hidden="true" />
+										Convert Your Own Vehicle
+                    </MDBBadge>
+								</a>
+							</MDBCol>
+						</MDBRow>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!" className="font-weight-bold">
+									Convert Your Own Vehicle!  The Ultimate DIY
+                  </a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">Van Ownership</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">How to Make a Beet Cocktail?</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">8 Sneaky Reasons You're Always Hungry.</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between mb-4">
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">5 Pressure Cooker Recipes You Need to Try.</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+					</MDBCol>
+
+					<MDBCol md="12" lg="4" className="mb-lg-0 mb-5">
+						<MDBView hover rounded className="z-depth-1-half mb-4">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/4lhyo7mfmbI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<MDBMask overlay="white-slight" className="waves-light" />
+							<MDBMask overlay="white-slight" className="waves-light" />
+
+						</MDBView>
+						<MDBRow className="mb-3">
+							<MDBCol size="12">
+								<a href="#!">
+									<MDBBadge color="deep-orange">
+										<MDBIcon icon="plane" className="pr-2" aria-hidden="true" />
+										Travel
+                    </MDBBadge>
+								</a>
+							</MDBCol>
+						</MDBRow>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!" className="font-weight-bold">
+									This is title of the news
+                  </a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">Trends in the blogosphere for 2018.</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">Where can you eat the best lunch in Warsaw?</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">What camera is worth taking for holidays?</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between mb-4">
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">Why should you visit Lisbon?</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+					</MDBCol>
+
+					<MDBCol md="12" lg="4" className="mb-lg-0 mb-5">
+						<MDBView hover rounded className="z-depth-1-half mb-4">
+							<img
+								className="img-fluid"
+								src="https://mdbootstrap.com/img/Photos/Others/images/52.jpg"
+								alt=""
 							/>
+							<a href="#!">
+								<MDBMask overlay="white-slight" className="waves-light" />
+							</a>
+						</MDBView>
+						<MDBRow className="mb-3">
+							<MDBCol size="12">
+								<a href="#!">
+									<MDBBadge color="success">
+										<MDBIcon icon="leaf" className="pr-2" aria-hidden="true" />
+										Nature
+                    </MDBBadge>
+								</a>
+							</MDBCol>
+						</MDBRow>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!" className="font-weight-bold">
+									This is title of the news
+                  </a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
 						</div>
-					</div>
-
-					<div className="modal-footer justify-content-center flex-column flex-md-row">
-						<span className="mr-4">Spread the word!</span>
-						<div>
-							<a type="button" className="btn-floating btn-sm btn-fb">
-								<i className="fab fa-facebook-f" />
-							</a>
-							<a type="button" className="btn-floating btn-sm btn-tw">
-								<i className="fab fa-twitter" />
-							</a>
-							<a type="button" className="btn-floating btn-sm btn-gplus">
-								<i className="fab fa-google-plus-g" />
-							</a>
-							<a type="button" className="btn-floating btn-sm btn-ins">
-								<i className="fab fa-linkedin-in" />
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">
+									How to recognize the footsteps of wild animals?
+                  </a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
 							</a>
 						</div>
-						<button
-							type="button"
-							className="btn btn-outline-primary btn-rounded btn-md ml-4"
-							data-dismiss="modal"
-						>
-							Close
-            </button>
-					</div>
-				</div>
-			</div>
-		</div>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">National Parks in Poland.</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between" style={newsStyle}>
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">Traveling without littering the planet.</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+						<div className="d-flex justify-content-between mb-4">
+							<MDBCol size="11" className="text-truncate pl-0 mb-3">
+								<a href="#!">How to protect rainforests?</a>
+							</MDBCol>
+							<a href="#!">
+								<MDBIcon icon="angle-double-right" />
+							</a>
+						</div>
+					</MDBCol>
+				</MDBRow>
+			</MDBCardBody>
+		</MDBCard>
 	);
-};
+}
 
-export default YouTube;
+export default FeaturesPage;
