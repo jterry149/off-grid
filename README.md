@@ -24,6 +24,7 @@
     - Jessica Terry
     - Rebecca Baker
     - Oscar Juma
+    - Ivan Ramirez
 
 ## PROJECT DEMO
 [Demo Here](https://off-grid1.herokuapp.com/)
