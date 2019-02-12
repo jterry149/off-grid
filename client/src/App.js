@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
-//import { clearCurrentProfile } from './actions/profileActions';
+import { clearCurrentProfile } from './actions/profileActions';
 
 // Redux and our store
 import { Provider } from 'react-redux';
@@ -51,7 +51,7 @@ if (localStorage.jwtToken) {
     // Logout user
     store.dispatch(logoutUser());
     // Clear current Profile
-    //store.dispatch(clearCurrentProfile());
+    store.dispatch(clearCurrentProfile());
     // Redirect to login
     window.location.href = '/login';
   }
@@ -69,16 +69,11 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <div className="container">
-              <Switch>
-                {/* <Route exact path="/mapjourney" component={MapJourney} />  */}
-              </Switch>
-              <Switch>
+                {/* <Route exact path="/mapjourney" component={MapJourney} />   */}
                 <Route exact path="/register" component={Signup} />
-              </Switch>
-              <Switch>
                 <Route exact path="/login" component={Login} />
-              </Switch>
-              {/* <Route exact path="/profile/:handle" component={Profile} /> */}
+                {/* <Route exact path="/profiles" component={Profiles} /> */}
+              {/* <Route exact path="/profile/:handle" component={Profile} />  */}
               <Switch>
                   <PrivateRoute exact path="/dashboard" component= {Dashboard} />
               </Switch> 
@@ -89,19 +84,19 @@ class App extends Component {
                   component={CreateProfile}
                 />
               </Switch>
-              {/* <Switch>
-                <PrivateRoute
+              <Switch>
+                {/* <PrivateRoute
                   exact
                   path="/edit-profile"
                   component={EditProfile}
-                />
-              </Switch> */}
-              {/* <Switch>
-                <PrivateRoute exact path="/feed" component={Posts} />
-              </Switch> */}
-              {/* <Switch>
-                <PrivateRoute exact path="/post/:id" component={Post} />
-              </Switch> */}
+                /> */}
+              </Switch> 
+              <Switch>
+                {/* <PrivateRoute exact path="/feed" component={Posts} /> */}
+              </Switch> 
+              <Switch>
+                {/* <PrivateRoute exact path="/post/:id" component={Post} /> */}
+              </Switch> 
               <Route exact path="/not-found" component={NotFound} /> 
             </div>
             <Footer />
