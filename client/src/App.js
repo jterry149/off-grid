@@ -14,12 +14,12 @@ import store from './store';
 import PrivateRoute from './components/common/PrivateRoute';
 
 // Required Files
-import Home from './pages/Home';
+import Home from './pages/Landing';
 //import CurrentLocation from './components/Map/Map';
 import Navbar from './components/Navbar/NavbarMDB';
 import Footer from './components/Footer/Footer';
 import YouTubeCard from './pages/YouTubeCard';
-// import YouTubeCarousel from './pages/YouTubeCarousel';
+import YouTubeCarousel from './pages/YouTubeCarousel';
 import about from './pages/about';
 //import Register from './components/auth/Register';
 // import Login from './components/auth/Login'
