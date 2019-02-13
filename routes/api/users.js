@@ -38,9 +38,9 @@ router.post('/register', (req, res) => {
         } else {
             // Grab the email address assigned avatar or set a default icon
             const avatar = gravatar.url(req.body.email, {
-                size: '175',  // size of avatar
-                rating: 'pg', // rating of avatar
-                default: 'mm' // default icon
+                s: '200',  // size of avatar
+                r: 'pg', // rating of avatar
+                d: 'mm' // default icon
             });
 
             // Create the new user

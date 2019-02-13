@@ -53,8 +53,6 @@ const ProfileSchema = new Schema({
     }
 });
 
-// Creates our model from the above schema using mongoose model method
-const Profile = mongoose.model('Profile', ProfileSchema);
 
 // Export the ProfileSchema'
-module.exports = Profile;
+module.exports = Profile = mongoose.model('profile', ProfileSchema);;

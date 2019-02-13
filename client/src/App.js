@@ -23,8 +23,8 @@ import Home from "./pages/Home";
 // Required Component Files 
 import NavbarMDB from './components/Navbar/NavbarMDB';
 import Footer from './components/Footer/Footer';
-import SignupMDB from './components/Signup/SignupMDB';
-import LoginMDB from './components/Login/LoginMDB';
+//import SignupMDB from './components/Signup/SignupMDB';
+//import LoginMDB from './components/Login/LoginMDB';
 import Dashboard from './components/Dashboard/Dashboard';
 import CreateProfile from './components/Create-Profile/CreateProfile';
 import EditProfile from './components/Edit-Profile/EditProfile';
@@ -75,8 +75,8 @@ class App extends Component {
               <Route exact path="/news" component={News} />
               <Route exact path="/resources" component={Resources} /> */}
             <div className="container">
-              <Route exact path="/register" component={SignupMDB} />
-              <Route exact path="/login" component={LoginMDB} />
+              {/* <Route exact path="/register" component={SignupMDB} />
+              <Route exact path="/login" component={LoginMDB} /> */}
               <Route exact path="/profiles" component={Profiles} /> 
               <Route exact path="/profile/:handle" component={Profile} /> 
               <Switch>

@@ -54,8 +54,5 @@ const PostSchema = new Schema({
   }
 });
 
-// Creates our model from the above schema using mongoose model method
-const Post = mongoose.model('Post', PostSchema);
-
 // Export the post schema
-module.exports = Post;
+module.exports = Post =mongoose.model('post', PostSchema);
