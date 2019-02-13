@@ -1,5 +1,7 @@
+// Required Dependencies
 import React from 'react';
 
+// Export default
 export default () => {
   return (
     <div>

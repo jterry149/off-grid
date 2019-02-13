@@ -22,11 +22,11 @@ dispatch => {
 
 // A function to login and get the user token from api
 export const loginUser = userData => dispatch => {
-    axios
-        .post('/api/users/login', userData)
+    axios.post('/api/users/login', userData)
         .then(res => {
             // Variable used to save response to the local storage
-            const { token } = res.date;
+            
+            const { token } = res.data;
             // Set the token to the localStorage
             localStorage.setItem('jwtToken', token);
             // Set the token to be the auth header

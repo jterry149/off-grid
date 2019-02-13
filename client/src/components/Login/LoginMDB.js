@@ -6,18 +6,17 @@ import {
   MDBModalBody,
   MDBModalHeader,
   MDBModalFooter,
-  MDBInput,
-  MDBBtn
+
 } from "mdbreact";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 // Required Files
 import { loginUser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
 import "./styles.css";
 
-class LoginMDB extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -78,9 +77,9 @@ class LoginMDB extends Component {
 
   render() {
     // Object state to handle errors
-    const { errors } = this.props;
-    console.log(this.props);
+    const { errors } = this.state;
     return (
+      <div className="login">
       <MDBContainer>
         <MDBModal isOpen={this.props.modal} toggle={this.props.toggle}>
           <MDBModalHeader className="text-center" toggle={this.props.toggle}>
@@ -93,7 +92,6 @@ class LoginMDB extends Component {
                 placeholder="Email Address"
                 name="email"
                 type="email"
-                icon="envelope"
                 value={this.state.email}
                 onChange={this.onChange}
                 error={errors.email}
@@ -102,7 +100,6 @@ class LoginMDB extends Component {
                 placeholder="Password"
                 name="password"
                 type="password"
-                icon="lock"
                 value={this.state.password}
                 onChange={this.onChange}
                 error={errors.password}
@@ -114,73 +111,36 @@ class LoginMDB extends Component {
             </form>
 
             <div className="text-center mb-3">
-              {/* <MDBBtn
-                    type="button"
-                    className="btn blue-gradient btn-block btn-rounded z-depth-1a"
-                    onSubmit={this.onSubmit}
-                    onClick={this.onChange}
-                  > */}
               <p className="font-small blue-text d-flex justify-content-end">
-                {" "}
                 <a href="!#" className="blue-text ml-1">
-                  Forgot Password?
+                  Forgot Password?{" "}
                 </a>
               </p>
-
-              {/* </MDBBtn> */}
-            </div>
-
-            <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
-              {" "}
-              or Sign in with:
-            </p>
-
-            <div className="row my-3 d-flex justify-content-center">
-              {/* <!--Facebook--> */}
-              <button
-                type="button"
-                className="btn btn-white btn-rounded mr-md-3 z-depth-1a"
-              >
-                <i className="fab fa-facebook-f text-center" />
-              </button>
-              {/* <!--Twitter--> */}
-              <button
-                type="button"
-                className="btn btn-white btn-rounded mr-md-3 z-depth-1a"
-              >
-                <i className="fab fa-twitter" />
-              </button>
-              {/* <!--Google +--> */}
-              <button
-                type="button"
-                className="btn btn-white btn-rounded z-depth-1a"
-              >
-                <i className="fab fa-google-plus-g" />
-              </button>
             </div>
             <div className="font-small grey-text d-flex justify-content-end">
-              Not a member?{" "}
+                Not a member?{" "}
               <p
                 onClick={this.openOtherModal}
                 className="blue-text ml-1 font-weight-bold"
               >
                 Sign Up{" "}
-              </p>{" "}
+              </p>
             </div>
           </MDBModalBody>
           <MDBModalFooter>
-            <MDBContainer fluid>
+            <MDBContainer>
               &copy; {new Date().getFullYear()} Copyright:{" "}
               <a href="/home"> TraveLife Road Warriors</a>
             </MDBContainer>
           </MDBModalFooter>
         </MDBModal>
       </MDBContainer>
+      </div>
     );
   }
 }
 // Set up object PropsTypes for the Login
-LoginMDB.propTypes = {
+loginUser.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
@@ -196,4 +156,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { loginUser }
-)(LoginMDB);
+)(Login);

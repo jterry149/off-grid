@@ -11,8 +11,8 @@ module.exports = function validateRegisterInput(data){
     data.name = !isEmpty(data.name) ? data.name : '';
     data.email = !isEmpty(data.email) ? data.email : '';
     data.password = !isEmpty(data.password) ? data.password : '';
-    data.confirmPassword = !isEmpty(data.confirmPassword) ?
-    data.confirmPassword : '';
+    data.password2 = !isEmpty(data.confirmPassword) ?
+    data.password2 : '';
 
     // Validate the length of the name to be a certain amount of characters
     if(!Validator.isLength(data.name, { min: 2, max: 30 })){
@@ -45,13 +45,13 @@ module.exports = function validateRegisterInput(data){
     }
 
     // Validate and display message to user for the confirm password error 
-    if(Validator.isEmpty(data.confirmPassword)){
-        errors.confirmPassword = 'Confirm Password field is required';
+    if(Validator.isEmpty(data.password2)){
+        errors.password2 = 'Confirm Password field is required';
     }
 
     // Validate and display message to user for the confirm password if matches password error 
-    if(Validator.equals(data.password, data.confirmPassword)){
-        errors.confirmPassword = 'Passwords must match';
+    if(Validator.equals(data.password, data.password2)){
+        errors.password2 = 'Passwords must match';
     }
 
     return {

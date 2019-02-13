@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {
   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, 
 } from "mdbreact";
-
+import { BrowserRouter as Router } from 'react-router-dom';
 // Required Files
 import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
@@ -12,25 +12,36 @@ import Login from '../Login/LoginMDB';
 import Signup from '../Signup/SignupMDB'
 
 class Navbar extends Component {
-  state = {
-    loginModal: false,
-    signupModal: false,
-
-  };
-
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapse: false,
+      isWideEnough: false,
+      loginModal: false,
+      signupModal: false,
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+  // Model login
   toggleLoginModal = () => {
     this.setState({
       loginModal: !this.state.loginModal
     });
   };
 
+  // model signup
   toggleSignupModal = () => {
     this.setState({
       signupModal: !this.state.signupModal
     });
   };
 
+  // onCLick function
+  onClick() {
+    this.setState({
+      collapse: !this.state.collapse
+    });
+  }
   // Event function to handle logout
   onLogoutClick(event) {
     event.preventDefault();
@@ -38,6 +49,7 @@ class Navbar extends Component {
     this.props.logoutUser();
   }
 
+  // collapse toggle
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   }
@@ -48,7 +60,7 @@ class Navbar extends Component {
 
     // Authenticated Links
     const authLinks = (
-      <MDBNavbarNav right>
+      <MDBNavbarNav>
         <MDBNavItem >
           <MDBNavLink to="/feed">
             Post Feed
@@ -57,7 +69,7 @@ class Navbar extends Component {
         <MDBNavItem >
           <MDBNavLink to="/dashboard">
             Profile Dashboard
-        </MDBNavLink>
+          </MDBNavLink>
         </MDBNavItem>
         <MDBNavItem >
           <a
@@ -79,53 +91,64 @@ class Navbar extends Component {
     );
     // Guest user links
     const guestLinks = (
-      <MDBNavbarNav right>
+      <MDBNavbarNav>
         <MDBNavItem >
-          <MDBNavLink to="/register" onClick={() => this.toggleSignupModal()}>Sign-In</MDBNavLink>
+          <MDBNavLink to="/register"  onClick={() => this.toggleSignupModal()}>Sign-Up</MDBNavLink>
         </MDBNavItem>
         <MDBNavItem>
-          <MDBNavLink to="/login" onClick={() => this.toggleLoginModal()}>Login</MDBNavLink>
+          <MDBNavLink to="/login"  onClick={() => this.toggleLoginModal()}>Login</MDBNavLink>
         </MDBNavItem>
       </MDBNavbarNav>
     );
+
+    // Return Navbar
     return (
-        <MDBNavbar color="indigo darken-4" dark expand="md">
-          <MDBNavbarBrand >
-            <strong className="white-text">TraveLife Road Warriors</strong>
-          </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={this.toggleCollapse} />
-          <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-            <MDBNavbarNav left>
-              <MDBNavItem active>
-                <MDBNavLink to="/home">Home</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/about">About</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/mapjourney">Journey</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/resources">Resources</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavbarNav right>
-              <MDBNavItem>
-                <Login modal={this.state.loginModal}
-                  toggle={this.toggleLoginModal}
-                  toggleOtherModal={this.toggleSignupModal}/>
-              </MDBNavItem>
-              <MDBNavItem>
-                  <Signup
-                  modal={this.state.signupModal}
-                  toggle={this.toggleSignupModal}
-                  toggleOtherModal={this.toggleLoginModal}
-                  />
-              </MDBNavItem>
-              {isAuthenticated ? authLinks : guestLinks}
-              </MDBNavbarNav>
-            </MDBNavbarNav>       
-          </MDBCollapse>
-        </MDBNavbar>
+          <Router>
+            <MDBNavbar color="indigo darken-4" dark expand="md" fixed="top">
+              <MDBNavbarBrand href="/">
+                <strong className="white-text">TraveLife Road Warriors</strong>
+              </MDBNavbarBrand>
+                {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+                <MDBCollapse isOpen={this.state.collapse} navbar>
+                  <MDBNavbarNav left>
+                    <MDBNavItem active>
+                      <MDBNavLink to="/home">Home</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="/about">About</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="/map">Journey</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="/news">News</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="/resources">Resources</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="/profiles">{' '}Community</MDBNavLink>
+                    </MDBNavItem>
+                  </MDBNavbarNav>
+                  <MDBNavbarNav right>
+                    <MDBNavItem>
+                        <Login modal={this.state.loginModal}
+                        toggle={this.toggleLoginModal}
+                        toggleOtherModal={this.toggleSignupModal}/>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                        <Signup
+                          modal={this.state.signupModal}
+                          toggle={this.toggleSignupModal}
+                          toggleOtherModal={this.toggleLoginModal}
+                      />
+                  </MDBNavItem> 
+                  {isAuthenticated ? authLinks : guestLinks}
+                </MDBNavbarNav>
+               
+              </MDBCollapse>
+            </MDBNavbar>
+          </Router>
     );
   }
 }

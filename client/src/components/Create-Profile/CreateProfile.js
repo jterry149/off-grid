@@ -21,10 +21,10 @@ class CreateProfile extends Component {
             handle: '',
             location: '',
             bio: '',
-            twitter: '',
-            facebook: '',
             youtube: '',
             instagram: '',
+            twitter: '',
+            facebook: '',
             errors: {}
         };
   
@@ -47,10 +47,10 @@ class CreateProfile extends Component {
             handle: this.state.handle,
             location: this.state.location,
             bio: this.state.bio,
-            twitter: this.state.twitter,
-            facebook: this.state.facebook,
             youtube: this.state.youtube,
-            instagram: this.state.instagram
+            instagram: this.state.instagram,
+            twitter: this.state.twitter,
+            facebook: this.state.facebook,      
         };
         
         // Create the profile when submitted
@@ -75,25 +75,6 @@ class CreateProfile extends Component {
             socialInputs = (
             <div>
                 <InputGroup
-                placeholder="Twitter Profile URL"
-                name="twitter"
-                icon="fab fa-twitter"
-                value={this.state.twitter}
-                onChange={this.onChange}
-                error={errors.twitter}
-                />
-  
-                <InputGroup
-                placeholder="Facebook Page URL"
-                name="facebook"
-                icon="fab fa-facebook"
-                value={this.state.facebook}
-                onChange={this.onChange}
-                error={errors.facebook}
-                />
-  
-  
-                <InputGroup
                 placeholder="YouTube Channel URL"
                 name="youtube"
                 icon="fab fa-youtube"
@@ -110,14 +91,32 @@ class CreateProfile extends Component {
                 onChange={this.onChange}
                 error={errors.instagram}
                 />
+                <InputGroup
+                placeholder="Twitter Profile URL"
+                name="twitter"
+                icon="fab fa-twitter"
+                value={this.state.twitter}
+                onChange={this.onChange}
+                error={errors.twitter}
+                />
+  
+                <InputGroup
+                placeholder="Facebook Page URL"
+                name="facebook"
+                icon="fab fa-facebook"
+                value={this.state.facebook}
+                onChange={this.onChange}
+                error={errors.facebook}
+                /> 
             </div>
         );
       }
   
       // Render our created profile page for the user to input data
         return (
+        <div className="create-profile">
         <MDBContainer fluid>
-            <MDBRow className="create-profile">
+            <MDBRow>
                 <MDBCol md="8">
                     <h1 className="display-4 text-center">Create Your TraveLife Road Warriors Profile</h1>
                     <p className="lead text-center">
@@ -173,6 +172,7 @@ class CreateProfile extends Component {
                 </MDBCol>
             </MDBRow>
         </MDBContainer>
+        </div>
         );
     }
 }

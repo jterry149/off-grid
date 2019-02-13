@@ -13,24 +13,26 @@ import store from './store';
 // Import our private route component
 import PrivateRoute from './components/common/PrivateRoute';
 
-// Required Files
+// Required page Files
 import Home from "./pages/Home";
-//import MapJourney from './components/Map/MapTest';
-import Navbar from './components/Navbar/NavbarMDB';
+// import About from "./pages/About";
+// import Journey from "./pages/Journey";
+// import  News from "./pages/News";
+// import  Resources from "./pages/Resources";
+
+// Required Component Files 
+import NavbarMDB from './components/Navbar/NavbarMDB';
 import Footer from './components/Footer/Footer';
-//import Register from './components/auth/Register';
-// import Login from './components/auth/Login'
-import Signup from './components/Signup/SignupMDB'
-import Login from './components/Login/LoginMDB'
+import SignupMDB from './components/Signup/SignupMDB';
+import LoginMDB from './components/Login/LoginMDB';
 import Dashboard from './components/Dashboard/Dashboard';
 import CreateProfile from './components/Create-Profile/CreateProfile';
-//import EditProfile from './components/edit-profile/EditProfile';
+import EditProfile from './components/Edit-Profile/EditProfile';
 //import AddVehicle from './components/add-credentials/AddVehicle';
-//import AddEducation from './components/add-credentials/AddEducation';
-//import Profiles from './components/profiles/Profiles';
-//import Profile from './components/profile/Profile';
-//import Posts from './components/posts/Posts';
-//import Post from './components/post/Post';
+import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 import NotFound from './components/Not-Found/NotFound';
 
 // Imported styles sheet
@@ -65,15 +67,18 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
+            <NavbarMDB />
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
+              {/* <Route exact path="/about" component={About} />
+              <Route exact path="/map" component={Journey} />
+              <Route exact path="/news" component={News} />
+              <Route exact path="/resources" component={Resources} /> */}
             <div className="container">
-                {/* <Route exact path="/mapjourney" component={MapJourney} />   */}
-                <Route exact path="/register" component={Signup} />
-                <Route exact path="/login" component={Login} />
-                {/* <Route exact path="/profiles" component={Profiles} /> */}
-              {/* <Route exact path="/profile/:handle" component={Profile} />  */}
+              <Route exact path="/register" component={SignupMDB} />
+              <Route exact path="/login" component={LoginMDB} />
+              <Route exact path="/profiles" component={Profiles} /> 
+              <Route exact path="/profile/:handle" component={Profile} /> 
               <Switch>
                   <PrivateRoute exact path="/dashboard" component= {Dashboard} />
               </Switch> 
@@ -85,17 +90,17 @@ class App extends Component {
                 />
               </Switch>
               <Switch>
-                {/* <PrivateRoute
+                <PrivateRoute
                   exact
                   path="/edit-profile"
                   component={EditProfile}
-                /> */}
+                /> 
               </Switch> 
               <Switch>
-                {/* <PrivateRoute exact path="/feed" component={Posts} /> */}
+                <PrivateRoute exact path="/feed" component={Posts} /> 
               </Switch> 
               <Switch>
-                {/* <PrivateRoute exact path="/post/:id" component={Post} /> */}
+                <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch> 
               <Route exact path="/not-found" component={NotFound} /> 
             </div>

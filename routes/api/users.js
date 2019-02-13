@@ -4,10 +4,8 @@ const router = express.Router();
 const gravatar = require('gravatar');
 const bycrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const passport = require('passport');
-
-// Load keys file
 const keys = require('../../config/keys');
+const passport = require('passport');
 
 // Load our input validation files
 const validateRegisterInput = require('../../validation/register');
@@ -58,13 +56,14 @@ router.post('/register', (req, res) => {
                bycrypt.hash(newUser.password, salt, (err, hash) => {
                   if(err) throw err;
                   newUser.password = hash;
-                  newUser.save()
+                  newUser
+                    .save()
                     .then(user => res.json(user))
                     .catch(err => console.log(err)); 
-               }) 
-            })
+               });
+            });
         }
-    })
+    });
 });
 
 // Route:       POST api/users/login
@@ -104,7 +103,7 @@ router.post('/login', (req, res) => {
                     id: user.id,
                     name: user.name,
                     avatar: user.avatar
-                }
+                };
                 // Sign the token and pass in necessary parameters
                 jwt.sign(
                     payload,
@@ -115,7 +114,8 @@ router.post('/login', (req, res) => {
                         success: true,
                         token: 'Bearer ' + token
                        }); 
-                    });
+                    }
+                );
             }   else {
                 errors.password = 'Password was incorrect';
                 return res.status(400).json(errors);
