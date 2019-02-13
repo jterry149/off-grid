@@ -10,7 +10,8 @@ import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
 import Login from '../Login/LoginMDB';
 import Signup from '../Signup/SignupMDB'
-import Logo from '../../Images/logo_combo_small.png'
+import Logo from '../../Images/logo_combo_small.png';
+// import Shield from '../../Images/shield.png';
 
 class Navbar extends Component {
   state = {
@@ -92,6 +93,8 @@ class Navbar extends Component {
     return (
       <MDBNavbar color="indigo darken-4" dark expand="md">
         <MDBNavbarBrand >
+          {/* <a class="nav-link Ripple-parent active" aria-current="page" href="/">
+            <img src={Shield} style={{ width: 50, marginTop: -7 }} /></a> */}
           <a class="nav-link Ripple-parent active" aria-current="page" href="/">
             <img src={Logo} style={{ width: 250, marginTop: -7 }} /></a>
         </MDBNavbarBrand>
