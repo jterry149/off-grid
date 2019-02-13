@@ -1,8 +1,8 @@
 // Required Dependecies 
 import React from "react";
 import { MDBJumbotron, MDBContainer } from "mdbreact";
-import Logo from "../Images/logo_combo.png";
-import Logo_small from "../Images/Logo_small.png";
+import Logo from "../Images/logo_combo_yellow.png";
+// import Logo_small from "../Images/logo_combo_yellow.png";
 import Shield from "../Images/shield.png";
 
 
