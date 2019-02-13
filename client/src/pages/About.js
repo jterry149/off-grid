@@ -16,9 +16,13 @@ const Jumbotron = () => {
 
                 <p>The TraveLife Road Warriors help those going on short road trips all the way to those who have chosen to pack it up and live their lives on the road. We are a team made up of RV, TinyHome, Camper, Van, SUV and Sedan OWNERS and USERS. In addition to our expertise, we help people utilize the millions of other road travel resources available.</p>
 
-                <p>Whatever path you choose, we can help you and brave it!</p>
-                <img src={Shield} style={{ width: 100 }} alt="shield" />
-                <img src={Logo} style={{ width: 300 }} alt="logo" />
+                <p>Whatever path you choose, we can help you brave it!</p>
+
+
+                <a class="nav-link Ripple-parent active" aria-current="page" href="/">
+                    <p>Get Started Now</p>
+                    <img src={Shield} style={{ width: 100 }} alt="shield" />
+                    <img src={Logo} style={{ width: 300 }} alt="logo" /></a>
 
 
                 {/* <p><img src={Logo_small} style={{ width: 200 }} alt="logosmall" /> */}

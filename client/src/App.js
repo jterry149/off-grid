@@ -16,7 +16,7 @@ import PrivateRoute from './components/common/PrivateRoute';
 // Required Files
 import Home from "./pages/Home";
 import About from "./pages/About"
-import YouTube from "./pages/YouTube"
+import YouTube from "./pages/YouTubeCard"
 //import CurrentLocation from './components/Map/Map';
 import Navbar from './components/Navbar/NavbarMDB';
 import Footer from './components/Footer/Footer';
