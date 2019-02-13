@@ -10,7 +10,7 @@ import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
 import Login from '../Login/LoginMDB';
 import Signup from '../Signup/SignupMDB'
-import Logo from '../../Images/logo_combo_small.png';
+import Logo from '../../Images/logo_combo_yellow.png';
 // import Shield from '../../Images/shield.png';
 
 class Navbar extends Component {
