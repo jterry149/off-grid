@@ -102,7 +102,7 @@ class Navbar extends Component {
               <MDBNavLink to="/home">Home</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/about">About</MDBNavLink>
+              <MDBNavLink to="/About">About</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to="/map">Journey</MDBNavLink>
