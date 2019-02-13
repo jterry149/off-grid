@@ -1,6 +1,6 @@
 // Required Dependencies
 import React from 'react';
-import spinner from '../../images/spinner.gif';
+import spinner from '../../Images/spinner.gif';
 
 export default () => {
   return (

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=EB+Garamond");
 
 .jumbotron {
-  background: url('./images/road.png'); 
+  background: url('./Images/road.png'); 
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -12,6 +12,11 @@
 body {
   font-family: "EB Garamond", serif;
   text-align: right;
+}
+.aboutus {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #1c1c1c;
+  text-shadow: none;
 }
 
 img {

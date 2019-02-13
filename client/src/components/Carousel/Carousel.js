@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
-"mdbreact";
+  "mdbreact";
 
-const coffeeImage = require("../../images/coffee.png");
-const vanImage = require("../../images/van.png");
-const truckImage = require("../../images/truck.png");
-const rvImage = require("../../images/rv.png");
+const coffeeImage = require("../../Images/coffee.png");
+const vanImage = require("../../Images/van.png");
+const truckImage = require("../../Images/truck.png");
+const rvImage = require("../../Images/rv.png");
 
 const items = [
   {

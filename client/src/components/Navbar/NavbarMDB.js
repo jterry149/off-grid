@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, 
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse,
 } from "mdbreact";
 
 // Required Files
@@ -10,6 +10,7 @@ import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
 import Login from '../Login/LoginMDB';
 import Signup from '../Signup/SignupMDB'
+import Logo from '../../Images/logo_combo_small.png'
 
 class Navbar extends Component {
   state = {
@@ -89,43 +90,44 @@ class Navbar extends Component {
       </MDBNavbarNav>
     );
     return (
-        <MDBNavbar color="indigo darken-4" dark expand="md">
-          <MDBNavbarBrand >
-            <strong className="white-text">TraveLife Road Warriors</strong>
-          </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={this.toggleCollapse} />
-          <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-            <MDBNavbarNav left>
-              <MDBNavItem active>
-                <MDBNavLink to="/home">Home</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/about">About</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/map">Journey</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/resources">Resources</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavbarNav right>
+      <MDBNavbar color="indigo darken-4" dark expand="md">
+        <MDBNavbarBrand >
+          <a class="nav-link Ripple-parent active" aria-current="page" href="/">
+            <img src={Logo} style={{ width: 250, marginTop: -7 }} /></a>
+        </MDBNavbarBrand>
+        <MDBNavbarToggler onClick={this.toggleCollapse} />
+        <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+          <MDBNavbarNav left>
+            <MDBNavItem active>
+              <MDBNavLink to="/home">Home</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/About">About</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/map">Journey</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/resources">Resources</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavbarNav right>
               <MDBNavItem>
                 <Login modal={this.state.loginModal}
                   toggle={this.toggleLoginModal}
-                  toggleOtherModal={this.toggleSignupModal}/>
+                  toggleOtherModal={this.toggleSignupModal} />
               </MDBNavItem>
               <MDBNavItem>
-                  <Signup
+                <Signup
                   modal={this.state.signupModal}
                   toggle={this.toggleSignupModal}
                   toggleOtherModal={this.toggleLoginModal}
-                  />
+                />
               </MDBNavItem>
               {isAuthenticated ? authLinks : guestLinks}
-              </MDBNavbarNav>
-            </MDBNavbarNav>       
-          </MDBCollapse>
-        </MDBNavbar>
+            </MDBNavbarNav>
+          </MDBNavbarNav>
+        </MDBCollapse>
+      </MDBNavbar>
     );
   }
 }

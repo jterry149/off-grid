@@ -15,6 +15,8 @@ import PrivateRoute from './components/common/PrivateRoute';
 
 // Required Files
 import Home from "./pages/Home";
+import About from "./pages/About"
+import YouTube from "./pages/YouTube"
 //import CurrentLocation from './components/Map/Map';
 import Navbar from './components/Navbar/NavbarMDB';
 import Footer from './components/Footer/Footer';
@@ -68,14 +70,16 @@ class App extends Component {
             <Navbar />
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/About" component={About} />
+            <Route exact path="/Resources" component={YouTube} />
             <div className="container">
               {/* <Route exact path="/map" component={CurrentLocation} /> */}
               <Route exact path="/register" component={Signup} />
               <Route exact path="/login" component={Login} />
               {/* <Route exact path="/profile/:handle" component={Profile} /> */}
               <Switch>
-                  <PrivateRoute exact path="/dashboard" component= {Dashboard} />
-              </Switch> 
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
               <Switch>
                 <PrivateRoute
                   exact
@@ -96,7 +100,7 @@ class App extends Component {
               {/* <Switch>
                 <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch> */}
-              <Route exact path="/not-found" component={NotFound} /> 
+              <Route exact path="/not-found" component={NotFound} />
             </div>
             <Footer />
           </div>
